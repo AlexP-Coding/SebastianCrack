@@ -7,6 +7,7 @@ To add:
 - Timing
 - Text color and size
 ```
+# Text comment
 
 # CHARACTER COLORS
 define bgCharColorA = "#1d53a5"
