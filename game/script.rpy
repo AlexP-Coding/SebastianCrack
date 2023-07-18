@@ -60,6 +60,7 @@ define charArmy = Character("Army", color = bgCharColorA, what_size=34)
 define charBMom = Character("Bass’s Mom Who Is Visiting", color = bgCharColorA)
 define charBDad = Character("Bass’s Dad Who Is Visiting", color = bgCharColorB)
 define charNews = Character("Journalist", color=bgCharColorA)
+define charMail = Character("Maiman", color=bgCharColorA)
 
 
 # SCRIPT 
@@ -83,6 +84,8 @@ label start:
     show eileen happy
 
     # These display lines of dialogue.
+
+    ##### INTRO SEB #####
 
     "A long time ago, far far deep into the lands of Morocco a portuguese king was acting like a teenage brat."
     
@@ -120,6 +123,9 @@ label start:
     "As the shores in Portugal filled with fog, and the population prayed for Sebastian’s return, his beautiful garments were lost forever..."
 
     "{cps=2}Until…{/cps}"
+
+
+    ##### INTRO BASS #####
 
     charBass "Holy monarchy, is that the long lost 1548 D.Sebastian hot crop top?"
 
@@ -200,7 +206,7 @@ label pt1_choice02_Done:
     charBass "The guys at Wishy-Washy are insane…I'll bet this sweater-top isn't even THAT haunted."
 
 
-## CHOICES
+    ##### CHOICES #####
 
     "As Bass leaves his luxurious condo, (no, there’s no sarcasm there, this is what counts as luxury in Lisbon in 2023 if you’re a local) he is greeted with only the freshest air the city can provide."
 
@@ -386,7 +392,8 @@ label pt3_choice04_Done:
     jump temp_ending
 
 
-### ENDINGS
+
+##### ENDINGS #####
 
 label endingEvil:
     "The rumor about cards and banks goes beyond what Bass could’ve imagined."
@@ -397,6 +404,8 @@ label endingEvil:
     "The Earth was literally shaken to its core. It’s too much. In one instant, it’s all gone."
     "Atmosphere popped. Thousands of years of existence sprinkled throughout the cosmos as if it were mere decoration."
     "And the only proof any of it ever mattered...is a sweater."
+    jump temp_ending
+
 
 label endingBaddie:
     "Bass blows up overnight." 
@@ -405,6 +414,163 @@ label endingBaddie:
     "He’s uncancelable. When he sits down in a gray hoodie, fake tears bottle in hand, and PR statement just off screen the internet forgives their favorite white man."
     "Youtube has to beef up their website just to handle the amount of traffic he generates."
     "He’s unstoppable."
+    jump temp_ending
+
+
+label endingLoveYourself:
+    " Bass, naked once more on the cold cobbled streets, begins to head home, while avoiding the gaze of the drunk men in sad beige trousers."
+    "Once at home, Bass gazed once more upon his precious poster."
+
+    charBass "Oh, why can’t I be hot and sexy like you… Your luscious lips, your creamy, inbred skin…"
+    charBass "*sigh* How many ladies must you have pulled in your hay day. Why can’t I just be you!"
+
+    "Once more, our dear Bass cried himself to sleep. However, in the next morning, an even worse surprise awaited him."
+    "On that Friday morning, the mailman appeared for the first time that week. Bass believed it was his treasured sweater."
+    "But alas, his sweater had been kidnapped by a nefarious being: the post office!"
+
+    charBass "What!? What do you mean?! Why do I have to pay 60 euros for MY sweater?!"
+
+    charMail "It’s the customs fee. Nothin’ you can do about it."
+
+    charBass "Why do I have to go to Leiria!?"
+
+    charMail "Look, weird-looking kiddo, I just deliver the mail. Sort it out yourself."
+
+    charBass "*sigh* Should I go to Leiria and pay this robbery of a fee or just…stay home and be depressed?"
+
+    menu:
+        "Stay home and be depressed":
+            jump endingLoveYourself_choice01_StayHomeYes
+        
+        "Go to Leiria":
+            jump endingLoveYourself_choice01_Done
+
+        "Go to Leiria (dramatically)":
+            jump endingLoveYourself_choice01_Done
+
+
+label  endingLoveYourself_choice01_StayHomeYes:
+    "Bass grabbed his things and embarked on the treacherous path to Leiria!"
+
+    charBass "What? No! I said I want to stay home! *snif* At least my Seby's poster won’t hurt my feelings…"
+
+    "C’mon dude. Don’t be like that."
+    "You almost considered spending money on that sweater. That’s like, a lot of thoughts."
+
+    charBass "I. Want. To. Stay. Home."
+
+    "Well, too bad. You’re going to Leiria and you will like it!"
+    "If you don’t go, I’ll burn your dear Seby and all of his incestuous beauty!"
+
+    charBass "Noo! Please, anything but that. Fine… I’ll go."
+
+    jump endingLoveYourself_choice01_Done
+
+
+label endingLoveYourself_choice01_Done:
+    "Although the train would be much, much, much faster, Bass decided he didn't want to spend a single penny more than he had to."
+    "He decided to send himself to Leiria by mail."
+    "This choice led to a journey of multiple years, sealed inside a tiny box, but Bass persevered."
+
+    "Upon arrival, Bass noticed a small detail."
+    "Leiria wasn't real. All this time, it had been a wormhole! "
+
+    charBass " Oooh, my head…Where…where am I?"
+
+    charBass "Something is wrong…Am I dead?"
+
+    "Bass was in fact, not dead, just a bit groggy from the journey."
+    "All along, Leiria had been a secret portal to Morocco."
+    "He was now in a strange van, somewhere in this foreign country."
+    "Somewhere…familiar."
+
+    charBass "Nuh uh. I’m not doing this. I just want my sweater and…love."
+
+    charSeb "Ahhh!"
+    charSeb "O.M.G. Did that thing just like, explode?"
+    charSeb "Who? Get off me, filthy peasant! *cough* I mean, filthy similar social class man. "
+
+    charBass "Everything hurts… Wait. Is this… the post office!"
+    charBass "Hey, you. Give me my sweater."
+
+    charSeb "*sigh* Another one looking for some lost package…"
+    charSeb "When will anyone look for good old Seby *sob*."
+
+    charBass "It’s not some lost package! It’s a priceless arti… Did…did you just say Seby?"
+
+    charSeb "I got separated from my besties when I came here, and they never came back for meeee…"
+    charSeb "I had to piss…"
+    charSeb "And…they all thought I was bleeding to death, because I had royal coloured pee. Now I’m stuck here… forever."
+
+    charBass "Are you..."
+
+    menu:
+        "…the Seby?":
+            jump endingLoveYourself_choice02_Done
+
+        "…D. Sebastian the first?":
+            jump endingLoveYourself_choice02_Done
+        
+        "…His incestuous grace in person?":
+            jump endingLoveYourself_choice02_Done
+
+label endingLoveYourself_choice02_Done:
+    charSeb "Don’t call me that… those days…are over."
+    charSeb "My pee isn't even red anymore… What king I am…"
+
+    charBass "I’m your biggest fan!!!"
+    charBass "Please, please…Give me an autograph or I die."
+
+    charSeb "C’mon then. Die."
+    charSeb "I double dare you."
+    charSeb "Do you know who I am? Well, was…"
+    charSeb "I bet they put my stupid little cousin on the throne, didn't they. Pff, can’t even do a manicure on his own."
+
+    charBass "Uh, about that… he kinda died…with you. The Spaniards took it…"
+
+    charSeb "What? Double Uncle - slash - Cousin Phi Phi? He’s like a… 4 at best. He kinda looks like a thumb."
+    charSeb "Oh, then I have nothing to worry about. He can’t reach dearest Seby’s heels. Old man liked slaying people too much, like, literally."
+
+    charBass "How are you alive? You should be-"
+
+    charSeb "Like, chop, chop, chop, chop. If the french revolution had happened back then. They would’ve loooved him."
+    charSeb "Like, forget Robespierre, it would have been Thumbpierre. Then he would have been a queen."
+
+    charBass "But, how-"
+
+    charSeb "But he wasn't one, and sadly, neither was I."
+    charSeb "I’m stuck here, eternally. There’s nothing left to slaaaay."
+    charSeb "Wait. Omg, don’t tell me I gave the kingdom to…the spanish?"
+    charSeb "Oh noo, my unsoiled reputation as the straigh…greatest king ever…is ruined."
+    charSeb "Am I not remembered as the best King of Portugal?"
+
+    charBass "Uh, you’re not remembered as the worst…maybe."
+
+    charSeb "Nooooo! My incestuous kingdom! My great realm of hotness.I’m so stupid. *sob*"
+
+    charBass "Hey, what are you saying? To me you’re the greatest king to have ever lived!"
+    charBass "You’re not stupid, you’re brave. Who would march into cannons like you did?"
+    charBass "Also, you’re the only one who ended a dynasty with style."
+
+    charSeb "You’re just lying to make me feel better. It’s not worth it…"
+
+    charBass "You deserve love. Do you know why?"
+    charBass "Because I love you. With all my heart."
+    charBass "I would… pay for your lunch! (if it’s less than 1.50 euros)."
+    charBass "Oh Sebastian, you are the love of my life!"
+
+    charSeb "Do you…do you mean that?"
+
+    charBass "Of course. You are m-m-my world. I don’t need a sweater when I can have you!"
+
+    charSeb "You should put some clothes one though. Or you’ll have a nasty burn where my divine kind power does not reach. But the sun will."
+
+    jump temp_ending
+
+
+
+
+
 
 
 label temp_ending:
