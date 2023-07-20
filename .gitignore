@@ -163,3 +163,14 @@ cython_debug/
 errors.txt
 log.txt
 traceback.txt
+files.txt
+cache/
+saves/
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.rpyc
+*.rpymc
