@@ -608,7 +608,7 @@ label endingLoveYourself_choice02_Done:
 
     charBass "Of course. You are m-m-my world. I don’t need a sweater when I can have you!"
 
-    charSeb "You should put some clothes one though. Or you’ll have a nasty burn where my divine kind power does not reach. But the sun will."
+    charSeb "You should put some clothes on though. Or you’ll have a nasty burn where my divine kind power does not reach. But the sun will."
 
     jump temp_ending
 
