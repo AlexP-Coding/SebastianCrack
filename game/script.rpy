@@ -394,6 +394,48 @@ label pt3_choice04_RestaurantBaddie:
 label pt3_choice04_Done:
     jump temp_ending
 
+label dateevil:
+    "Bass’ date approaches him. He feels the sweater tingle against his skin again but…it’s not tempting him. Hmmm…"  
+    charGfPsycho "Hey! You must be Bass, I’m Charlie!" 
+
+    menu:
+        "Compliment her":
+            jump evildate_choice1_1
+
+        "Go to dinner":
+            jump evildate_choice1_2   
+
+label evildate_choice1_1:
+    charBass "You’re very…punctual."
+
+    "Bass is trying to be something he’s not…civil. She can smell it a mile away."
+    "You’re trying to be something you’re not, she’s suspicious of you."
+
+    charGfPsycho "I don’t like guys who are observant…that’s my job."
+
+    "Yeah…I’m not getting a good vibe from her."
+
+label evildate_choice1_2:
+    charBass "Well then, we should head in for our totally budget friendly I can afford this this is totally worth every penny and priced reasonably dinner."
+
+    "Bass opens the door and goes in first, not even waiting for her. It swings backwards and smacks her in the face. Her nose starts bleeding. She licks the blood and smiles before following him inside."
+    "Dinner is going smoothly. With Bass uncharacteristically ordering the most expensive thing on the menu, fully planning on making his date pay for it. Charlie orders the steak so rare it’s practically raw, she mentions something about the redness of the blood being oh so vibrant."
+    "As the waiter goes to switch the cutlery, Charlie refuses. The waiter is uneasily uncomfortable and backs away."
+
+    charGfPsycho "Don’t worry, I brought my own."
+
+    "She whips out a gigantic kitchen, shiny and sparkling and omg…is that dried blood on the handle?"
+
+    charGfPsycho "It’s a priceless relic, I bought it on eBay for ssssuuuper cheap. People just don’t appreciate the classics."
+
+    charBass "The classics?"
+
+    charGfPsycho "Murder weapons silly"
+
+
+
+
+
 
 
 ##### ENDINGS #####
