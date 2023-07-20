@@ -191,6 +191,16 @@ label pt1_choice02_ByeParentsNo:
 label pt1_choice02_Done:
     charBass "The guys at Wishy-Washy are insane…I'll bet this sweater-top isn't even THAT haunted."
 
+    "As Bass leaves his luxurious condo, (no, there’s no sarcasm there, this is what counts as luxury in Lisbon in 2023 if you’re a local) he is greeted with only the freshest air the city can provide."
+    
+    charBass "Mmm…I love the smell of piss in the morning."
+
+    "While on his merry way to do his chores a strange couple steps in his path, flailing their phones around. They’re red as can be and wearing the most hideous hiking shoes known to man. It looks like they’re carrying their entire house on their back. Bass couldn’t help but appreciate the dedication to refusing to pay for a hotel. They seem to be trying to find the nearest metro line"
+    "His skin begins to tingle, maybe it’s the wool…maybe it’s the traces of lead…either way Bass can feel it calling to him."
+
+
+
+
     "GAME END. FOR NOW..."
 
 
