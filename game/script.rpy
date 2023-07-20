@@ -9,6 +9,13 @@ To add:
 ```
 # Text comment
 
+## Img position
+
+transform middle:
+    yalign 0.25
+    xalign 0.5
+    zoom 1.20
+
 # CHARACTER COLORS
 define bgCharColorA = "#1d53a5"
 define bgCharColorB = "#aaaaaa"
@@ -78,13 +85,13 @@ label start:
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
 
-    scene bg room
+    scene bg cave
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
 
-    show eileen happy
+    show sebby_uncovered at middle
 
     # These display lines of dialogue.
 
@@ -126,6 +133,10 @@ label start:
     "As the shores in Portugal filled with fog, and the population prayed for Sebastian’s return, his beautiful garments were lost forever..."
 
     "{cps=2}Until…{/cps}"
+
+    hide sebby_uncovered
+
+    show bass_covered_croptop  at middle
 
 
     ##### INTRO BASS #####
@@ -392,7 +403,7 @@ label pt3_choice04_RestaurantBaddie:
 
 
 label pt3_choice04_Done:
-    jump temp_ending
+    jump endingDateDisappears
 
 
 
