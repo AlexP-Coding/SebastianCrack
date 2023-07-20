@@ -62,6 +62,8 @@ define charBDad = Character("Bass’s Dad Who Is Visiting", color = bgCharColorB
 define charNews = Character("Journalist", color=bgCharColorA)
 define charMail = Character("Maiman", color=bgCharColorA)
 
+define currentGfriend = charGfPsycho
+
 
 # SCRIPT 
 
@@ -70,6 +72,7 @@ label start:
     $ nrBaddieChoices = 0
     $ nrEvilChoices = 0
     $ nrObnoxiousChoices = 0
+
 
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
@@ -417,6 +420,48 @@ label endingBaddie:
     jump temp_ending
 
 
+label endingDateDisappears:
+    charBass "You want my...sweater?"
+    charBass "You mean my precious D.Sebastian long lost now found hot crop top?!"
+    charBass "But, [currentGfriend.name], it's all I have!"
+
+    "Bass' date giggles. It sounds slightly deranged."
+
+    "Bass gives his date the D.Sebastian long lost now found hot crop top." 
+    "Unfortunately, he truly does have nothing else on him - and finds himself completely naked."
+
+    "He's moderately okay with this."
+
+    "Bass looks at his date." 
+    "A bright light surrounds the sweater, nearly blinding him."
+    "His date doesn't seem to notice."
+
+    charBass "Hey, are you okay?"
+
+    "[currentGfriend.name] stares -"
+
+    currentGfriend "Huh, I guess the carpet does match the dra - aaaaaaaaaaaaaaaaaaaaaaaapes!"
+
+    "- and disappears in a flash, taking the D.Sebastian long lost now found hot crop top along, leaving only the faint stench of nutmeg behind."
+
+    charBass "........"
+
+    charBass "............................."
+
+    charBass "This is what I get for giving people things."
+    charBass "No love, and no wearable historical artifacts I had to pay customs for."
+    charBass "I'm going back to bed. At least my D.Sebastian poster won't disappear on me."
+
+    jump endingDateDisappearsTwo
+
+label endingDateDisappearsTwo:
+    "Bass goes home to wallow in peace. He cries himself to sleep and wonders if he should try again."
+
+    charBass "Maybe in another life..."
+
+    jump temp_ending
+
+
 label endingLoveYourself:
     " Bass, naked once more on the cold cobbled streets, begins to head home, while avoiding the gaze of the drunk men in sad beige trousers."
     "Once at home, Bass gazed once more upon his precious poster."
@@ -574,7 +619,7 @@ label endingLoveYourself_choice02_Done:
 
 
 label temp_ending:
-    "THE END...FOR NOW."
+    "Oh dear. Maybe you'd like to try and give him a happier ending? (THANKS FOR PLAYING!)"
 
 
     # This ends the game.
