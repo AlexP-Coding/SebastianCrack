@@ -666,6 +666,25 @@ label endingLoveYourself_choice02_Done:
     jump temp_ending
 
 
+label endingRejected
+    "As the date kept getting longer and longer, Bass’ date began moving frantically. Desperately looking around, searching for something to help them escape."
+
+    charBass "Ohh did the date food also touch your innards? You look like you’re about to produce a very nasty surprise."
+    charBass "Well, why don’t you go relieve yourself, while I prepare an even bigger surprise for you."
+
+    charGfKaren "YES! Bathroom! That 's what I need!"
+    #I put Karen here, but this line is supposed to be said by either of the dates
+
+    charBass "Don’t you dare use the ones that you have to pay for!"
+
+    "Awaiting the return of his date, Bass had spent the last 5 hours behind the local Sweet Drop."
+    "As the poor soulless employees left, they stared with pity into the eyes of someone who had even less soul. "
+    "Heartbroken, Bass decided to become one with the Sweet Drop."
+    "Even to this day, the employees perform paganic rituals around all that remains of him."
+    "A simple sweater."
+
+    jump temp_ending
+
 
 
 
