@@ -24,13 +24,6 @@ define bgCharColorB = "#aaaaaa"
 define baddieColor = "#ff00ea"
 define deathColor = "#ca0a0a"
 
-$ nrBaddieChoices = 0
-$ nrEvilChoices = 0
-$ nrObnoxiousChoices = 0
-$ nrChoicesTotal = 4
-$ nrGoodDateOptions = 0
-$ nrMaxDateOptions = 3
-$ minGoodDateOptions = -(nrMaxDateOptions // - 2)
 
 # STYLES
 
@@ -75,18 +68,40 @@ define charMail = Character("Maiman", color=bgCharColorA)
 
 define currentGfriend = charGfPsycho
 
-$ datedEvil = False
-$ datedObnoxious = False
-
 # SCRIPT 
 
 # The game starts here.
 label start:
+    
+    "Hi. Do you want to cheat and get the True Ending right away?"
+
+    menu:
+        "Yes":
+            $ datedEvil = True
+            $ datedObnoxious = True
+            "Well, you still gotta play the game to get it...except now it's just the one time."
+        
+        "No":
+            $ datedEvil = False
+            $ datedObnoxious = False
+            "Good for you. Have fun!"
+    
+    $ nrBaddieChoices = 0
+    $ nrEvilChoices = 0
+    $ nrObnoxiousChoices = 0
+    $ nrChoicesTotal = 4
+    
+    $ nrMaxDateOptions = 3
+    $ minGoodDateOptions = -(nrMaxDateOptions // - 2)
+    
+    jump fake_start
+
+
+label fake_start:
     $ nrBaddieChoices = 0
     $ nrEvilChoices = 0
     $ nrObnoxiousChoices = 0
     $ nrGoodDateOptions = 0
-
 
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
@@ -990,7 +1005,7 @@ label game_end_nice:
             jump end
 
         "Try your hand at love once more":
-            jump start
+            jump fake_start
 
 
 
@@ -1002,7 +1017,7 @@ label game_end:
             jump end
 
         "Try again":
-            jump start
+            jump fake_start
 
 
 
