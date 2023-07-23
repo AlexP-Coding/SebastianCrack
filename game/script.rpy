@@ -24,16 +24,13 @@ define bgCharColorB = "#aaaaaa"
 define baddieColor = "#ff00ea"
 define deathColor = "#ca0a0a"
 
-define ceildiv(a: int, b: int) -> int:
-    return -(a // -b)
-
 $ nrBaddieChoices = 0
 $ nrEvilChoices = 0
 $ nrObnoxiousChoices = 0
 $ nrChoicesTotal = 4
 $ nrGoodDateOptions = 0
 $ nrMaxDateOptions = 3
-$ minGoodDateOptions = ceildiv(nrMaxDateOptions, 2)
+$ minGoodDateOptions = -(nrMaxDateOptions // - 2)
 
 # STYLES
 
@@ -78,6 +75,8 @@ define charMail = Character("Maiman", color=bgCharColorA)
 
 define currentGfriend = charGfPsycho
 
+$ datedEvil = False
+$ datedObnoxious = False
 
 # SCRIPT 
 
@@ -423,40 +422,149 @@ label dateevil:
 
     menu:
         "Compliment her":
-            jump evildate_choice1_1
+            jump dateEvil_choice01_Compliment
 
         "Go to dinner":
             $ nrGoodDateOptions += 1
-            jump evildate_choice1_2   
+            jump dateEvil_choice01_Dinner
 
-label evildate_choice1_1:
+label dateEvil_choice01_Compliment:
     charBass "You’re very…punctual."
 
-    "Bass is trying to be something he’s not…civil. She can smell it a mile away."
+    "Bass is trying to be something he’s not - civil. She can smell it a mile away."
     "You’re trying to be something you’re not, she’s suspicious of you."
 
     charGfPsycho "I don’t like guys who are observant…that’s my job."
 
-    "Yeah…I’m not getting a good vibe from her."
+    charBass "(Yeah…I’m not getting a good vibe from her)."
 
-label evildate_choice1_2:
+    jump dateEvil_choice01_Done
+    
+
+label dateEvil_choice01_Dinner:
     charBass "Well then, we should head in for our totally budget friendly I can afford this this is totally worth every penny and priced reasonably dinner."
 
-    "Bass opens the door and goes in first, not even waiting for her. It swings backwards and smacks her in the face. Her nose starts bleeding. She licks the blood and smiles before following him inside."
-    "Dinner is going smoothly. With Bass uncharacteristically ordering the most expensive thing on the menu, fully planning on making his date pay for it. Charlie orders the steak so rare it’s practically raw, she mentions something about the redness of the blood being oh so vibrant."
+    "Bass opens the door and goes in first, not even waiting for her. It swings backwards and smacks her in the face. Her nose starts bleeding."
+    "She licks the blood and smiles before following him inside."
+    "Dinner is going smoothly, with Bass uncharacteristically ordering the most expensive thing on the menu, fully planning on making his date pay for it."
+    "Charlie orders the steak so rare it’s practically raw, and mentions something about the redness of the blood being oh so vibrant."
     "As the waiter goes to switch the cutlery, Charlie refuses. The waiter is uneasily uncomfortable and backs away."
 
     charGfPsycho "Don’t worry, I brought my own."
 
     "She whips out a gigantic kitchen, shiny and sparkling and omg…is that dried blood on the handle?"
 
-    charGfPsycho "It’s a priceless relic, I bought it on eBay for ssssuuuper cheap. People just don’t appreciate the classics."
+    charGfPsycho "It’s a priceless relic, I bought it on eBay for ssssuuuper cheap."
+    charGfPsycho "People just don’t appreciate the classics."
 
     charBass "The classics?"
 
-    charGfPsycho "Murder weapons silly"
+    charGfPsycho "Murder weapons, silly!"
 
-    # TODO
+    jump dateEvil_choice01_Done
+
+
+label dateEvil_choice01_Done:
+    charBass "..."
+
+    charSweater "We should probably get to know her weaknesses."
+    charSweater "You know. In case she kills you."
+
+    menu:
+        "Ask about her interests.":
+            jump dateEvil_choice02_Ask
+
+        "Dismiss her interests.":
+            $ nrGoodDateOptions +=1
+            jump dateEvil_choice02_Dismiss
+
+
+label dateEvil_choice02_Ask:
+    charBass "So Charlie, tell me more about your…interests."
+
+    "Charlie scowls."
+
+    charGfPsycho "Why don’t you tell me more about yourself hmm? Like who you work for or why you’re so interested in me."
+    charGfPsycho "Did someone hire you?"
+
+    charBass "What? No!"
+
+    "She angles the knife towards Bass."
+
+    charGfPsycho "Only someone with secrets to hide would be so defensive. Your body language says it all."
+
+    "... Isn’t body language a pseudoscience?"
+
+    charBass "(I don’t know man at this point I just want to leave this interaction with everything intact.)"
+
+    "Bass is able to get [charGfPsycho] to calm down but she’s watching him closely, knife at the ready."
+
+    jump dateEvil_choice02_Done
+
+
+label dateEvil_choice02_Dismiss:
+    charBass "Well I’m an artifact collector myself, of much more interesting items if I do say so myself…"
+
+    "Bass recounts the tales of the beloved poster of his idol, his Y2K plastic mace of a flip phone but not his sweater…"
+
+    "[charGfPsycho] listens happily: he doesn’t care about her!"
+    "He doesn’t care that she’s been labelled a psychopath by everyone!"
+    "Including every medical professional she’s seen! And member of law enforcement!"
+    "That makes her like him more."
+
+    jump dateEvil_choice02_Done
+
+label dateEvil_choice02_Done:
+    
+    charSweater "This is going well."
+    charSweater "Some murder would really spice things up, you know."
+
+    charBass "(I'll kill her with laughter!)"
+
+    menu:
+        "Tell a joke":
+            jump dateEvil_choice03_JokeNo
+
+        "Tell a joke":
+            $ nrGoodDateOptions += 1
+            jump dateEvil_choice03_JokeYes
+
+
+label dateEvil_choice03_JokeNo:
+    charBass "What does royalty wear during stormy weather?"
+    charBass "A Reign Coat."
+
+    "Charlie rolls her eyes."
+
+    charGfPsycho "Ugh. Lame."
+
+    jump dateEvil_choice03_Done
+
+
+label dateEvil_choice03_JokeYes:
+    "Bass laughs to himself."
+    
+    charGfPsycho "Why are you laughing?"
+
+    charBass "I’m just thinking of all the ways I’d get rid of that waiter, if you catch my drift."
+
+    "Charlie did catch his drift, except she interpreted it in a completely different way."
+    "You know."
+    "The murder-y way."
+
+    jump dateEvil_choice03_Done
+
+
+label dateEvil_choice03_Done:
+    if nrGoodDateOptions > minGoodDateOptions:
+        $ datedEvil = True
+        jump endingDateDisappears
+
+    if nrGoodDateOptions <= minGoodDateOptions:
+        jump endingRejected
+
+
+
 
 
 label dateObnoxious:
@@ -621,6 +729,7 @@ label dateObnoxious_choice03_Kiss:
 
 label dateObnoxious_choice03_Done:
     if nrGoodDateOptions > minGoodDateOptions:
+        $ datedObnoxious = True
         jump endingDateDisappears
 
     if nrGoodDateOptions <= minGoodDateOptions:
@@ -638,7 +747,7 @@ label endingEvil:
     "The Earth was literally shaken to its core. It’s too much. In one instant, it’s all gone."
     "Atmosphere popped. Thousands of years of existence sprinkled throughout the cosmos as if it were mere decoration."
     "And the only proof any of it ever mattered...is a sweater."
-    jump temp_ending
+    jump game_end
 
 
 label endingBaddie:
@@ -648,7 +757,7 @@ label endingBaddie:
     "He’s uncancelable. When he sits down in a gray hoodie, fake tears bottle in hand, and PR statement just off screen the internet forgives their favorite white man."
     "Youtube has to beef up their website just to handle the amount of traffic he generates."
     "He’s unstoppable."
-    jump temp_ending
+    jump game_end
 
 
 label endingDateDisappears:
@@ -690,7 +799,7 @@ label endingDateDisappearsTwo:
 
     charBass "Maybe in another life..."
 
-    jump temp_ending
+    jump game_end
 
 
 label endingLoveYourself:
@@ -841,10 +950,10 @@ label endingLoveYourself_choice02_Done:
 
     charSeb "You should put some clothes on though. Or you’ll have a nasty burn where my divine kind power does not reach. But the sun will."
 
-    jump temp_ending
+    jump game_end
 
 
-label endingRejected
+label endingRejected:
     "As the date kept getting longer and longer, Bass’ date began moving frantically. Desperately looking around, searching for something to help them escape."
 
     charBass "Ohh did the date food also touch your innards? You look like you’re about to produce a very nasty surprise."
@@ -860,17 +969,37 @@ label endingRejected
     "Even to this day, the employees perform paganic rituals around all that remains of him."
     "A simple sweater."
 
-    jump temp_ending
+    jump game_end
 
 
 
 
+label temp_ending_nice:
+    "What a masterful show of self-love!"
+    "Still. Maybe you'd like to try a different route? \n(THANKS FOR PLAYING!!!)"
+
+    menu:
+        "End Game":
+            jump end
+
+        "Try your hand at love once more":
+            jump start
 
 
-label temp_ending:
-    "Oh dear. Maybe you'd like to try and give him a happier ending? (THANKS FOR PLAYING!)"
+
+label game_end:
+    "Oh dear. Maybe you'd like to try and get a happier ending? \n(THANKS FOR PLAYING!)"
+
+    menu:
+        "End Game":
+            jump end
+
+        "Try again":
+            jump start
 
 
+
+label end:
     # This ends the game.
 
     return
