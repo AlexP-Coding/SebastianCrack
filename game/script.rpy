@@ -101,6 +101,8 @@ label start:
     
     "This king was 24 years old."
 
+    play sound "funny-eastern-short-music-vlog-background-hip-hop-beat-29-sec-148905 (1) (1).mp3"
+
     charSeb "Yes! Victory will be super mine."
     charSeb "I am going to go head first into this like, super dangerous war and leave no heirs behind! Yaaaay!!"
 
@@ -585,6 +587,9 @@ label endingLoveYourself_choice01_Done:
     charBass "Nuh uh. I’m not doing this. I just want my sweater and…love."
 
     charSeb "Ahhh!"
+    
+    play sound "funny-eastern-short-music-vlog-background-hip-hop-beat-29-sec-148905 (1) (1).mp3"
+
     charSeb "O.M.G. Did that thing just like, explode?"
     charSeb "Who? Get off me, filthy peasant! *cough* I mean, filthy similar social class man. "
 
@@ -666,7 +671,7 @@ label endingLoveYourself_choice02_Done:
     jump temp_ending
 
 
-label endingRejected
+label endingRejected :
     "As the date kept getting longer and longer, Bass’ date began moving frantically. Desperately looking around, searching for something to help them escape."
 
     charBass "Ohh did the date food also touch your innards? You look like you’re about to produce a very nasty surprise."
