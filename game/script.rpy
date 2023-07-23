@@ -1,4 +1,4 @@
-# The script of the game goes in this file.
+﻿# The script of the game goes in this file.
 
 ```
 To add:
@@ -863,6 +863,8 @@ label endingLoveYourself_choice01_Done:
 
     "Upon arrival, Bass noticed a small detail."
     "Leiria wasn't real. All this time, it had been a wormhole! "
+
+    play sound "Endings/Love Yourself/PORTAL (1).mp3"
 
     charBass " Oooh, my head…Where…where am I?"
 
