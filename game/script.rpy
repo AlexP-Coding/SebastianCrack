@@ -98,6 +98,8 @@ label start:
 
 
 label fake_start:
+    $ endingId = ""
+
     $ nrBaddieChoices = 0
     $ nrEvilChoices = 0
     $ nrObnoxiousChoices = 0
@@ -758,6 +760,7 @@ label dateObnoxious_choice03_Done:
 ##### ENDINGS #####
 
 label endingEvil:
+    $ endingId = "Evil"
     "The rumor about cards and banks goes beyond what Bass could’ve imagined."
     "The banks are mysteriously drained of their assets. They all file for bankruptcy."
     "People start rioting. They turn on each other. Crucial means of communication are lost as cell towers go out."
@@ -770,6 +773,7 @@ label endingEvil:
 
 
 label endingBaddie:
+    $ endingId = "Baddie"
     "Bass blows up overnight." 
     "People just can’t get enough of him. He’s on the cover of every magazine still in print and his name is on everybody’s lips."
     "Plastic surgeons are booked for months on end with people desperate to recreate his juicy lips."
@@ -780,6 +784,7 @@ label endingBaddie:
 
 
 label endingDateDisappears:
+    $ endingId = "Date Disappears"
     charBass "You want my...sweater?"
     charBass "You mean my precious D.Sebastian long lost now found hot crop top?!"
     charBass "But, [currentGfriend.name], it's all I have!"
@@ -811,9 +816,9 @@ label endingDateDisappears:
     charBass "No love, and no wearable historical artifacts I had to pay customs for."
     charBass "I'm going back to bed. At least my D.Sebastian poster won't disappear on me."
 
-    jump endingDateDisappearsTwo
-
-label endingDateDisappearsTwo:
+    if datedEvil and datedObnoxious:
+        jump endingLoveYourself
+ 
     "Bass goes home to wallow in peace. He cries himself to sleep and wonders if he should try again."
 
     charBass "Maybe in another life..."
@@ -822,6 +827,7 @@ label endingDateDisappearsTwo:
 
 
 label endingLoveYourself:
+    $ endingId = "Love Yourself"
     " Bass, naked once more on the cold cobbled streets, begins to head home, while avoiding the gaze of the drunk men in sad beige trousers."
     "Once at home, Bass gazed once more upon his precious poster."
 
@@ -978,6 +984,7 @@ label endingLoveYourself_choice02_Done:
 
 
 label endingRejected:
+    $ endingId = "Rejected"
     "As the date kept getting longer and longer, Bass’ date began moving frantically. Desperately looking around, searching for something to help them escape."
 
     charBass "Ohh did the date food also touch your innards? You look like you’re about to produce a very nasty surprise."
@@ -999,7 +1006,7 @@ label endingRejected:
 
 
 label game_end_nice:
-    "What a masterful show of self-love!"
+    "What a masterful show of love!"
     "Still. Maybe you'd like to try a different route? \n(THANKS FOR PLAYING!!!)"
 
     menu:
@@ -1012,7 +1019,7 @@ label game_end_nice:
 
 
 label game_end:
-    "Oh dear. Maybe you'd like to try and get a happier ending? \n(THANKS FOR PLAYING!)"
+    "Oh dear. Maybe you'd like to try and get a happier ending? \n(Ending: [endingId])\n(THANKS FOR PLAYING!)"
 
     menu:
         "End Game":
