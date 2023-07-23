@@ -868,6 +868,9 @@ label endingLoveYourself_choice01_Done:
 
     charBass " Oooh, my head…Where…where am I?"
 
+    
+    play sound "Endings/Love Yourself/engine-6000 (1).mp3"
+
     charBass "Something is wrong…Am I dead?"
 
     "Bass was in fact, not dead, just a bit groggy from the journey."
@@ -876,6 +879,10 @@ label endingLoveYourself_choice01_Done:
     "Somewhere…familiar."
 
     charBass "Nuh uh. I’m not doing this. I just want my sweater and…love."
+    
+    play sound "Endings/Love Yourself/explosion-42132 (1).mp3"
+   
+    play sound "Endings/Love Yourself/oh-no-the-car-exploded-10632.mp3"
 
     charSeb "Ahhh!"
     
