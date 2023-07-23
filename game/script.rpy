@@ -108,7 +108,7 @@ label start:
     
     "This king was 24 years old."
 
-    play sound "funny-eastern-short-music-vlog-background-hip-hop-beat-29-sec-148905 (1) (1).mp3"
+    play sound "Shared Audio Themes and Leitmotifs/funny-eastern-short-music-vlog-background-hip-hop-beat-29-sec-148905 (1) (1).mp3"
 
     charSeb "Yes! Victory will be super mine."
     charSeb "I am going to go head first into this like, super dangerous war and leave no heirs behind! Yaaaay!!"
@@ -560,6 +560,7 @@ label dateEvil_choice03_JokeYes:
 label dateEvil_choice03_Done:
     if nrGoodDateOptions > minGoodDateOptions:
         $ datedEvil = True
+        $ currentGfriend = charGfPsycho
         jump endingDateDisappears
 
     if nrGoodDateOptions <= minGoodDateOptions:
@@ -732,6 +733,7 @@ label dateObnoxious_choice03_Kiss:
 label dateObnoxious_choice03_Done:
     if nrGoodDateOptions > minGoodDateOptions:
         $ datedObnoxious = True
+        $ currentGfriend = charGfKaren
         jump endingDateDisappears
 
     if nrGoodDateOptions <= minGoodDateOptions:
@@ -875,7 +877,7 @@ label endingLoveYourself_choice01_Done:
 
     charSeb "Ahhh!"
     
-    play sound "funny-eastern-short-music-vlog-background-hip-hop-beat-29-sec-148905 (1) (1).mp3"
+    play sound "Shared Audio Themes and Leitmotifs/funny-eastern-short-music-vlog-background-hip-hop-beat-29-sec-148905 (1) (1).mp3"
 
     charSeb "O.M.G. Did that thing just like, explode?"
     charSeb "Who? Get off me, filthy peasant! *cough* I mean, filthy similar social class man. "
@@ -955,7 +957,7 @@ label endingLoveYourself_choice02_Done:
 
     charSeb "You should put some clothes on though. Or you’ll have a nasty burn where my divine kind power does not reach. But the sun will."
 
-    jump game_end
+    jump game_end_nice
 
 
 label endingRejected:
@@ -979,7 +981,7 @@ label endingRejected:
 
 
 
-label temp_ending_nice:
+label game_end_nice:
     "What a masterful show of self-love!"
     "Still. Maybe you'd like to try a different route? \n(THANKS FOR PLAYING!!!)"
 
