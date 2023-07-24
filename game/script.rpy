@@ -1092,6 +1092,7 @@ label endingLoveYourself:
             jump endingLoveYourself_choice01_Done
 
         "Go to Leiria (dramatically)":
+            play sound "Endings/Love Yourself/risk-136788 (1) (mp3cut.net) (1).mp3"
             jump endingLoveYourself_choice01_Done
 
 
@@ -1116,6 +1117,8 @@ label  endingLoveYourself_choice01_StayHomeYes:
 label endingLoveYourself_choice01_Done:
     
     hide bg_bass_house
+
+    play sound "Endings/Love Yourself/epic-travel-on-celtic-roads-version-60s-10819 (1).mp3"
    
     "Although the train would be much, much, much faster, Bass decided he didn't want to spend a single penny more than he had to."
     "He decided to send himself to Leiria by mail."
@@ -1132,7 +1135,7 @@ label endingLoveYourself_choice01_Done:
     charBass " Oooh, my head…Where…where am I?"
 
     
-    play sound "Endings/Love Yourself/engine-6000 (1).mp3"
+    play sound "Endings/Love Yourself/truckrunningwav-14613 (1).mp3"
 
     charBass "Something is wrong…Am I dead?"
 
