@@ -1253,6 +1253,8 @@ label endingLoveYourself_choice02_Done:
     hide bass_censored_
     show sebby_uncovered at middle
 
+    play sound "Endings/Love Yourself/dark-piano-more-on-spotify-bruno-magic-152569 (mp3cut.net) (1).mp3"
+
     charSeb "But he wasn't one, and sadly, neither was I."
     charSeb "I’m stuck here, eternally. There’s nothing left to slaaaay."
     charSeb "Wait. Omg, don’t tell me I gave the kingdom to…the spanish?"
@@ -1278,6 +1280,8 @@ label endingLoveYourself_choice02_Done:
 
     hide bass_censored_
     show sebby_uncovered at middle
+
+    play sound "Endings/Love Yourself/romantic-episode-139730 (1).mp3"
 
     charSeb "You’re just lying to make me feel better. It’s not worth it…"
 
@@ -1305,6 +1309,7 @@ label endingLoveYourself_choice02_Done:
     charSeb "You should put some clothes on though. Or you’ll have a nasty burn where my divine kind power does not reach. But the sun will."
     
     hide sebby_uncovered_blush
+    play sound "Endings/Love Yourself/explosion_01-6225 (1).mp3"
 
     jump game_end_nice
 
