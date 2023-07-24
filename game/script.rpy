@@ -1055,6 +1055,8 @@ label endingLoveYourself:
     $ endingId = "Love Yourself"
     
     show bg_lisboa
+
+    play sound "Endings/Love Yourself/dark-piano-more-on-spotify-bruno-magic-152569 (mp3cut.net) (1).mp3"
     
     " Bass, naked once more on the cold cobbled streets, begins to head home, while avoiding the gaze of the drunk men in sad beige trousers."
     hide bg_lisboa
