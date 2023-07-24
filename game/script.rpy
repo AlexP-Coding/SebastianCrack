@@ -212,6 +212,8 @@ label pt1_choice01_Done:
 
     charBass "Should I say goodbye to my parents?"
 
+    hide bass_covered_full
+
     menu:
         "Say goodbye":
             jump pt1_choice02_ByeParentsYes
@@ -308,7 +310,9 @@ label pt3_choice01_DontHelpBaddie:
 label pt3_choice01_Done:
 
     "Bass continues on. He’s on a mission of the utmost importance...For iced coffee."
+    
     show cg_phone_message
+    
     "On his way, his phone dings twice."
     "Both of his dates text him. Who should be blessed with his attention?"
 
@@ -449,11 +453,11 @@ label pt3_choice04_Done:
         jump endingBaddie
 
     if nrEvilChoices >= nrObnoxiousChoices:
-        $ currentGfriend = charGfKaren
+        $ currentGfriend = charGfPsycho
         jump dateevil
 
-    if nrObnoxiousChoices < nrEvilChoices:
-        $ currentGfriend = charGfPsycho
+    if nrEvilChoices < nrObnoxiousChoices:
+        $ currentGfriend = charGfKaren
         jump dateObnoxious
 
 
@@ -661,7 +665,7 @@ label dateEvil_choice03_JokeYes:
     "The murder-y way."
     
     hide love_a_knife
-
+    hide bg_restaurant_inside
     jump dateEvil_choice03_Done
 
 
@@ -708,7 +712,7 @@ label dateObnoxious:
     "He had forgone making a reservation to spare cash, but now there's a line of exactly three people."
     "They are looking at possibly twenty minutes of boredom unless they somehow disappear."
 
-    charSweater "I think we should <i>get rid of the problem</i>."
+    charSweater "I think we should <i> get rid of the problem </i>."
 
     "Bass steadies himself."
 
@@ -962,6 +966,7 @@ label endingEvil:
     show main_menu
     
     "And the only proof any of it ever mattered...is a sweater."
+
     jump game_end
 
 
@@ -1279,6 +1284,8 @@ label endingLoveYourself_choice02_Done:
 
 label endingRejected:
     $ endingId = "Rejected"
+    show bg_restaurant_outside
+
     "As the date kept getting longer and longer, Bass’ date began moving frantically. Desperately looking around, searching for something to help them escape."
 
     charBass "Ohh did the date food also touch your innards? You look like you’re about to produce a very nasty surprise."
@@ -1287,10 +1294,17 @@ label endingRejected:
     currentGfriend "YES! Bathroom! That 's what I need!"
 
     charBass "Don’t you dare use the ones that you have to pay for!"
-
+    
+    hide bg_restaurant_outside
+    show bg_sweetdrop
+    
     "Awaiting the return of his date, Bass had spent the last 5 hours behind the local Sweet Drop supermarket."
     "As the poor soulless employees left, they stared with pity into the eyes of someone who had even less soul. "
     "Heartbroken, Bass decided to become one with the Sweet Drop."
+    
+    hide bg_sweetdrop
+    show bg_sweetdrop_sacrifice
+   
     "Even to this day, the employees perform paganic rituals around all that remains of him."
     "A simple sweater."
 
@@ -1300,6 +1314,7 @@ label endingRejected:
 
 
 label game_end_nice:
+    show bg_explosion_heart
     "What a masterful show of love!"
     "Still. Maybe you'd like to try a different route? \n(THANKS FOR PLAYING!!!)"
 
