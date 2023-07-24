@@ -109,13 +109,12 @@ label fake_start:
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
 
-    scene bg cave
+    show sebastiao
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
 
-    show sebby_uncovered at middle
 
     # These display lines of dialogue.
 
@@ -160,9 +159,11 @@ label fake_start:
 
     "{cps=2}Until…{/cps}"
 
-    hide sebby_uncovered
 
-    show bass_covered_croptop  at middle
+    hide sebastiao
+
+    show bg_bass_house
+
 
 
     ##### INTRO BASS #####
@@ -198,6 +199,9 @@ label pt1_choice01_Done:
     charBass "Ok, let’s see how I look."
 
     charBass "…"
+
+    show bass_covered_full at middle
+
     charBass_loud "{=slayBig}Perfect!{/slay}"
     charBass "Hot as an inbred king. I don't even need pants!"
 
@@ -241,6 +245,8 @@ label pt1_choice02_Done:
 
 
     ##### CHOICES #####
+    hide bg_bass_house
+    show bg_lisboa
 
     "As Bass leaves his luxurious condo, (no, there’s no sarcasm there, this is what counts as luxury in Lisbon in 2023 if you’re a local) he is greeted with only the freshest air the city can provide."
 
@@ -296,8 +302,9 @@ label pt3_choice01_DontHelpBaddie:
     "Sunscreen is nowhere to be found among the treasure."
 
     jump pt3_choice01_Done
-
+    
 label pt3_choice01_Done:
+
     "Bass continues on. He’s on a mission of the utmost importance...For iced coffee."
 
     "On his way, his phone dings twice."
@@ -333,6 +340,8 @@ label pt3_choice02_TextDateBaddie:
 
 
 label pt3_choice02_Done:
+    hide bg_lisboa
+    show bg_coffeeshop
 
     "Bass arrives at the coffee shop. The place is packed, the counter and cashier blocked by an endless sea of people."
     "Bass rolls his eyes. What does a guy have to do to get a cup of coffee?"
@@ -382,6 +391,9 @@ label pt3_choice03_CoffeeShopBaddie:
 
 
 label pt3_choice03_Done:
+    hide bg_coffeeshop
+    show bg_restaurant_outside
+
     "It’s almost time for his date and he’s starting to get nervous."
     "Bass stands outside the restaurant. What should he do?"
 
@@ -437,6 +449,7 @@ label pt3_choice04_Done:
 
 label dateevil:
     "Bass’ date approaches him. He feels the sweater tingle against his skin again but…it’s not tempting him. Hmmm…"  
+    show love_a_happy at middle
     charGfPsycho "Hey! You must be Bass, I’m Charlie!" 
 
     menu:
@@ -448,11 +461,15 @@ label dateevil:
             jump dateEvil_choice01_Dinner
 
 label dateEvil_choice01_Compliment:
+    hide love_a_happy
+    show love_a_normal at middle
     charBass "You’re very…punctual."
 
     "Bass is trying to be something he’s not - civil. She can smell it a mile away."
     "You’re trying to be something you’re not, she’s suspicious of you."
 
+    hide love_a_normal
+    show love_a_bored at middle
     charGfPsycho "I don’t like guys who are observant…that’s my job."
 
     charBass "(Yeah…I’m not getting a good vibe from her)."
@@ -462,28 +479,37 @@ label dateEvil_choice01_Compliment:
 
 label dateEvil_choice01_Dinner:
     charBass "Well then, we should head in for our totally budget friendly I can afford this this is totally worth every penny and priced reasonably dinner."
-
+    
     "Bass opens the door and goes in first, not even waiting for her. It swings backwards and smacks her in the face. Her nose starts bleeding."
     "She licks the blood and smiles before following him inside."
+    hide bg_restaurant_outside
+    show bg_restaurant_inside
     "Dinner is going smoothly, with Bass uncharacteristically ordering the most expensive thing on the menu, fully planning on making his date pay for it."
     "Charlie orders the steak so rare it’s practically raw, and mentions something about the redness of the blood being oh so vibrant."
     "As the waiter goes to switch the cutlery, Charlie refuses. The waiter is uneasily uncomfortable and backs away."
 
-    charGfPsycho "Don’t worry, I brought my own."
+    show love_a_happy at middle
 
+    charGfPsycho "Don’t worry, I brought my own."
+    hide love_a_happy
+    show love_a_happy_knife at middle
     "She whips out a gigantic kitchen, shiny and sparkling and omg…is that dried blood on the handle?"
 
     charGfPsycho "It’s a priceless relic, I bought it on eBay for ssssuuuper cheap."
     charGfPsycho "People just don’t appreciate the classics."
 
     charBass "The classics?"
-
+    hide love_a_happy_knife
+    show love_a_knife at middle
     charGfPsycho "Murder weapons, silly!"
-
+    
+    hide love_a_knife
     jump dateEvil_choice01_Done
 
 
 label dateEvil_choice01_Done:
+    hide bg_restaurant_outside
+    show bg_restaurant_inside
     charBass "..."
 
     charSweater "We should probably get to know her weaknesses."
@@ -495,13 +521,15 @@ label dateEvil_choice01_Done:
 
         "Dismiss her interests.":
             $ nrGoodDateOptions +=1
-            jump dateEvil_choice02_Dismiss
+            jump dateEvil_choice02_Dismiss    
 
 
 label dateEvil_choice02_Ask:
     charBass "So Charlie, tell me more about your…interests."
-
+    show love_a_normal at middle
     "Charlie scowls."
+    hide love_a_normal
+    show love_a_bored at middle
 
     charGfPsycho "Why don’t you tell me more about yourself hmm? Like who you work for or why you’re so interested in me."
     charGfPsycho "Did someone hire you?"
@@ -509,27 +537,34 @@ label dateEvil_choice02_Ask:
     charBass "What? No!"
 
     "She angles the knife towards Bass."
-
+    hide love_a_bored
+    show love_a_knife at middle
     charGfPsycho "Only someone with secrets to hide would be so defensive. Your body language says it all."
 
     "... Isn’t body language a pseudoscience?"
 
     charBass "(I don’t know man at this point I just want to leave this interaction with everything intact.)"
-
+    hide love_a_knife
+    show love_a_normal at middle
     "Bass is able to get [charGfPsycho] to calm down but she’s watching him closely, knife at the ready."
-
+    hide love_a_normal
     jump dateEvil_choice02_Done
 
 
 label dateEvil_choice02_Dismiss:
+    hide love_a_normal
     charBass "Well I’m an artifact collector myself, of much more interesting items if I do say so myself…"
 
     "Bass recounts the tales of the beloved poster of his idol, his Y2K plastic mace of a flip phone but not his sweater…"
-
+    hide love_a_normal
+    show love_a_happy at middle
     "[charGfPsycho] listens happily: he doesn’t care about her!"
     "He doesn’t care that she’s been labelled a psychopath by everyone!"
     "Including every medical professional she’s seen! And member of law enforcement!"
+    hide love_a_happy
+    show love_a_evil at middle
     "That makes her like him more."
+    hide love_a_evil
 
     jump dateEvil_choice02_Done
 
@@ -552,9 +587,10 @@ label dateEvil_choice02_Done:
 label dateEvil_choice03_JokeNo:
     charBass "What does royalty wear during stormy weather?"
     charBass "A Reign Coat."
-
+    show love_a_normal at middle
     "Charlie rolls her eyes."
-
+    hide love_a_normal
+    show love_a_bored at middle
     charGfPsycho "Ugh. Lame."
 
     jump dateEvil_choice03_Done
@@ -562,13 +598,18 @@ label dateEvil_choice03_JokeNo:
 
 label dateEvil_choice03_JokeYes:
     "Bass laughs to himself."
-    
+    show love_a_normal at middle
     charGfPsycho "Why are you laughing?"
 
     charBass "I’m just thinking of all the ways I’d get rid of that waiter, if you catch my drift."
-
+    hide love_a_normal
+    show love_a_evil at middle
     "Charlie did catch his drift, except she interpreted it in a completely different way."
+    hide love_a_evil
+    show love_a_happy at middle
     "You know."
+    hide love_a_happy
+    show love_a_knife at middle
     "The murder-y way."
 
     jump dateEvil_choice03_Done
@@ -590,14 +631,19 @@ label dateEvil_choice03_Done:
 label dateObnoxious:
     "Bass’ date approaches him."
     "He feels the sweater tingle against his skin again but…it feels different, somehow."
-
+    show love_b_normal at middle
     charGfKaren "Hi! Bass, right? It's [charGfKaren]."
     charBass "Pleasure to meet you."
-
+    hide love_b_normal
+    show love_b_bored at middle
     "[charGfKaren] looks at the line that's been forming."
+    hide love_b_bored
+    show love_b_normal_thinking at middle
     charGfKaren "We'll have a long time for meeting each other, it seems."
+    hide love_b_normal_thinking
+    show love_b_happy_evil at middle
     charGfKaren "These people have some nerve, making us wait like this."
-
+    hide love_b_happy_evil
     "Bass gulps."
     "He had forgone making a reservation to spare cash, but now there's a line of exactly three people."
     "They are looking at possibly twenty minutes of boredom unless they somehow disappear."
@@ -619,17 +665,20 @@ label dateObnoxious:
 
 label dateObnoxious_choice01_Scene:
     "Bass scoffs so loud some spit jumps out and into his date's face."
-
+    show love_b_bored at middle
     charGfKaren "Dude."
-    
+    hide love_b_bored
     charBass "Un. Be. Lie. Va. Ble."
     charBass "This is an OUTRAGE!"
     charBass "We've brought our good, hard-earned money to this establishment..."
     charBass "And you repay us with a NON-ZERO WAITING TIME??"
+    show love_b_normal at middle
     "[charGfKaren] looks at [charBass] with stars in his eyes."
+    hide love_b_normal
+    show love_b_happy at middle
     charGfKaren "I know, right?!"
     charBass "I will not stand for this! You'll be getting the worst Welp review of your lives, I tell you."
-
+    hide love_b_happy
     "The guy at reception ushers them in, face red. The people still in line give both of them the stink-eye as you pass."
 
     jump dateObnoxious_choice01_Done
@@ -640,12 +689,14 @@ label dateObnoxious_choice01_Game:
     "Bass pull out a ratty pack of cards he'd found on the ground."
     
     charBass "How about some 'Go Fish'?"
-
+    show love_b_normal at middle
     charGfKaren "..."
+    hide love_b_normal
+    show love_b_bored at middle
     charGfKaren "I'm sorry. Are we five?"
 
     charBass "...No, babe."
-
+    hide love_b_bored
     "Bass stands in silence for the long ten minutes it takes them to get in."
     "[charGfKaren] rants about poor customer service the whole time."
     "Bass adores him."
@@ -654,7 +705,8 @@ label dateObnoxious_choice01_Game:
 
 
 label dateObnoxious_choice01_Done:
-
+    hide bg_restaurant_outside
+    show bg_restaurant_inside
     "Bass and his date finally make it inside the restaurant."
 
     "It's packed. Servers sprint at speeds unknown to even Sanic the Porcupine."
@@ -662,13 +714,13 @@ label dateObnoxious_choice01_Done:
     "The loverbirds order: Bass frowns at the prices - "
     charBass "40 cents for bottled water! Disgusting!"
     "- and [charGfKaren] frowns at the menu options."
-
+    show love_b_bored at middle
     charGfKaren "They don't even have non-salt options. Disgusting!"
-
+    hide love_b_bored
     "Dinner comes and goes. It tastes as good as Bass (barely) paid."
-
+    show love_b_normal_thinking at middle
     charGfKaren "That bacon tasted so raw I could hear it mooing."
-
+    hide love_b_normal_thinking
     "Bass does not have the heart to tell him it's pork bacon...pre-cooked."
 
     "He should probably avenge his date regardless."
@@ -688,9 +740,9 @@ label dateObnoxious_choice02_Trip:
     "Bass trips the waiter once she goes to show them the bill (1000 cents! Outrageous!)."
     "The waiter spills the tray full of food on [charGfKaren]'s shoes."
     "Bass sees his past lives flash before his eyes."
-    
+    show love_b_bored at middle
     charGfKaren "I-  I-"
-
+    hide love_b_bored
     charBass "Oh dear. Oh no. Oh no. I'm so sorry."
     charBass "...I don't have to pay for that, right?"
 
@@ -699,26 +751,32 @@ label dateObnoxious_choice02_Trip:
 label dateObnoxious_choice02_Manager:
 
     charBass "I'd like to call the manager, please."
-
+    show love_b_happy at middle
     charGfKaren "You tell 'em, babe!"
 
     "The manager shows up, eventually. She is a woman almost twice Bass' size, and thrice as muscly."
-    
+    hide love_b_happy
+    show love_b_normal_thinking at middle
     charGfKaren "..."
     charBass "..."
-
+    hide love_b_normal_thinking
     "They quietly pay the bill and leave."
 
     jump dateObnoxious_choice02_Done
     
 
 label dateObnoxious_choice02_Done:
+    hide bg_restaurant_inside
+    show bg_restaurant_outside
+    show love_b_normal at middle
     charGfKaren "Well. That was that."
-
+    hide love_b_normal
+    hide bg_restaurant_outside
+    show bg_sweetdrop
     "They end up taking a walk, pausing near the local Sweet Drop supermarket."
-
+    show love_b_normal_thinking at middle
     charGfKaren "What now?"
-
+    hide love_b_normal_thinking
     charSweater "Let's finish this date with a bang, shall we?"
     
     menu:
@@ -730,8 +788,9 @@ label dateObnoxious_choice02_Done:
             jump dateObnoxious_choice03_Kiss
 
 label dateObnoxious_choice03_Review:
+    show love_b_happy_evil at middle
     charGfKaren "I thought you'd never ask!"
-
+    hide love_b_happy_evil
     "Their joint disregard for workers' rights helps them write such a poor review even the Definetly-Not-Haunted-Sweater cringes."
     "The restaurant is to close the very next day."
     "The staff hires a hitman for the couple as soon as they get the notice."
@@ -739,11 +798,18 @@ label dateObnoxious_choice03_Review:
     jump dateObnoxious_choice03_Done
 
 label dateObnoxious_choice03_Kiss:
+    show love_b_normal at middle
     "You close in on each other."
     "Closer...."
+    hide love_b_normal
+    show love_b_happy at middle
     "And closer..."
+    hide love_b_happy
+    show love_b_bored at middle
     "Until [charGfKaren] pushes you back."
+    
     charGfKaren "You wish! Dude...we are SO not there yet."
+    hide love_b_bored
     jump dateObnoxious_choice03_Done
 
 
