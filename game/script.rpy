@@ -253,14 +253,17 @@ label pt1_choice02_Done:
     show bg_lisboa
 
     "As Bass leaves his luxurious condo, (no, there’s no sarcasm there, this is what counts as luxury in Lisbon in 2023 if you’re a local) he is greeted with only the freshest air the city can provide."
+    
+    show bass_covered_full at middle
 
     charBass "Mmm…I love the smell of piss in the morning."
+
+    hide bass_covered_full
 
     "While on his merry way to do his chores a strange couple steps in his path, flailing their phones around."
     "They’re red as can be and wearing the most hideous hiking shoes known to man. It looks like they’re carrying their entire house on their back."
     "Bass couldn’t help but appreciate the dedication to refusing to pay for a hotel."
     "They seem to be trying to find the nearest metro line."
-
     "His skin begins to tingle, maybe it’s the wool…maybe it’s the traces of lead…either way Bass can feel it calling to him."
 
     charSweater "Don’t. Help. Don’t…help."
@@ -300,11 +303,16 @@ label pt3_choice01_DontHelpObnoxious:
     jump pt3_choice01_Done
 
 label pt3_choice01_DontHelpBaddie:
+    
+    show bass_covered_short at middle
+    
     "Bass greets the strangers with a cheshire grin, looking at the destination on their phone."
     "He scoffs, convinces them it’s not worth their time. Instead, he suggests somewhere better, more fun he says."
     "The tourists thank him for his time and help and go down a shady street. They are later mugged and the loot is redistributed among locals."
     "Sunscreen is nowhere to be found among the treasure."
-
+   
+    hide bass_covered_short
+    
     jump pt3_choice01_Done
     
 label pt3_choice01_Done:
@@ -340,8 +348,13 @@ label pt3_choice02_TextDateObnoxious:
     jump pt3_choice02_Done
 
 label pt3_choice02_TextDateBaddie:
+    show cg_phone_turnedoff
+
     "Bass doesn't have time for this. There are more important things to life than a romantic partner he can’t use for clout." 
     "He blocks both dates before deleting their contacts. C U NVR."
+    
+    hide cg_phone_turnedoff
+
     jump pt3_choice02_Done
 
 
@@ -395,17 +408,20 @@ label pt3_choice03_CoffeeShopBaddie:
 
     charNews "Is it true your oat milk is just regular milk with oats mixed in?"
 
+    show bass_covered_croptop at middle
+
     "Using his contacts, several Instagram stories and tweets Bass had successfully emptied the place of customers."
     "While the underpaid workers are bombarded and distracted, Bass goes behind the counter to make his own personalized and perfect drink…"
     "He also slips a few cartons of milk into his tote bag for good measure."
     
+    hide bass_covered_croptop
     hide bg_coffeeshop
     
     jump pt3_choice03_Done
 
 
 label pt3_choice03_Done:
-    hide bg_coffeeshop
+
     show bg_restaurant_outside
 
     "It’s almost time for his date and he’s starting to get nervous."
@@ -712,7 +728,7 @@ label dateObnoxious:
     "He had forgone making a reservation to spare cash, but now there's a line of exactly three people."
     "They are looking at possibly twenty minutes of boredom unless they somehow disappear."
 
-    charSweater "I think we should <i> get rid of the problem </i>."
+    charSweater "I think we should <i>get rid of the problem</i>."
 
     "Bass steadies himself."
 
@@ -966,20 +982,22 @@ label endingEvil:
     show main_menu
     
     "And the only proof any of it ever mattered...is a sweater."
-
+    hide main_menu
     jump game_end
 
 
 label endingBaddie:
     $ endingId = "Baddie"
     
-    show bg_restaurant_outside
-    
+    show bg_fog
+    show bass_covered_croptop at middle
+
     "Bass blows up overnight." 
     "People just can’t get enough of him. He’s on the cover of every magazine still in print and his name is on everybody’s lips."
     "Plastic surgeons are booked for months on end with people desperate to recreate his juicy lips."
     
-    hide bg_restaurant_outside
+    hide bass_covered_croptop
+    hide bg_fog
     show cg_apology video
     
     "He’s uncancelable. When he sits down in a gray hoodie, fake tears bottle in hand, and PR statement just off screen the internet forgives their favorite white man."
@@ -1092,24 +1110,22 @@ label  endingLoveYourself_choice01_StayHomeYes:
 
     charBass "Noo! Please, anything but that. Fine… I’ll go."
     
-    hide bg_bass_house
-    
     jump endingLoveYourself_choice01_Done
 
 
 label endingLoveYourself_choice01_Done:
     
+    hide bg_bass_house
+   
     "Although the train would be much, much, much faster, Bass decided he didn't want to spend a single penny more than he had to."
     "He decided to send himself to Leiria by mail."
     "This choice led to a journey of multiple years, sealed inside a tiny box, but Bass persevered."
-
-    "Upon arrival, Bass noticed a small detail."
-
+    
+    play sound "Endings/Love Yourself/PORTAL (1).mp3"
     show bg_portal
     
+    "Upon arrival, Bass noticed a small detail."
     "Leiria wasn't real. All this time, it had been a wormhole! "
-
-    play sound "Endings/Love Yourself/PORTAL (1).mp3"
     
     hide bg_portal
     
@@ -1148,15 +1164,16 @@ label endingLoveYourself_choice01_Done:
     charBass "Everything hurts… Wait. Is this… the post office!"
     charBass "Hey, you. Give me my sweater."
     
-    show SEBBY_UNCOVERED at middle
+    show sebby_uncovered at middle
     
     charSeb "*sigh* Another one looking for some lost package…"
     charSeb "When will anyone look for good old Seby *sob*."
 
+    hide sebby_uncovered
+
     charBass "It’s not some lost package! It’s a priceless arti… Did…did you just say Seby?"
     
-    hide sebby_uncovered
-    show SEBBY_UNCOVERED at middle
+    show sebby_uncovered at middle
 
     charSeb "I got separated from my besties when I came here, and they never came back for meeee…"
     charSeb "I had to piss…"
