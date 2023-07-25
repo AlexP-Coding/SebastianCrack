@@ -142,6 +142,8 @@ label fake_start:
     "Sebastian was heavily traumatized at court and was under a lot of pressure, from literally everyone. His reign wasn't all bad, but he kinda made a kingdom lose independence soo…."
     "Yeah… He made some stupid, stupid choices."
 
+    play sound "Intro/Intro Pt1 Seb/the-glorious-army-cinematic-epic-battle-music-warhammer-inspired-155892 (1).mp3"
+
     "In 1548, Sebastian and his army (including his 10yo cousin) marched into a really complicated and stupid battle."
 
     charSeb "Let’s go brave warriors! This crusade-like war will totally work out in our favor, like all the other crusades did!"
@@ -151,6 +153,8 @@ label fake_start:
     charSeb "We will {=slayBig}SLAAAAAAAY{/slayBig}… {w=1.2}{space=15} Our enemies!"
 
     charArmy "Chargeee! Ahhh!"
+
+    play sound "Intro/Intro Pt1 Seb/battle-screaming-36126 (1).mp3"
 
     "However, Sebastian did not {=slay}slay{/slay}, he was {=death}slayed{/death}…"
     "Probably."
