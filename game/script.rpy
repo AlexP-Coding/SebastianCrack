@@ -343,6 +343,7 @@ label pt3_choice01_DontHelpEvil:
 
 
 label pt3_choice01_DontHelpObnoxious:
+
     "Bass pulls out his phone, flipping it on queue. The mountain of charms just about misses their lobster red faces."
     "He cosplays as a productive member of society."
 
@@ -353,6 +354,8 @@ label pt3_choice01_DontHelpObnoxious:
 label pt3_choice01_DontHelpBaddie:
     
     show bass_covered_short at middle
+
+    play sound "Shared Audio Themes and Leitmotifs/baddie decision (nokia bitchy ringtone).mp3"
     
     "Bass greets the strangers with a cheshire grin, looking at the destination on their phone."
     "He scoffs, convinces them it’s not worth their time. Instead, he suggests somewhere better, more fun he says."
@@ -397,6 +400,8 @@ label pt3_choice02_TextDateObnoxious:
 
 label pt3_choice02_TextDateBaddie:
     show cg_phone_turnedoff
+
+    play sound "Shared Audio Themes and Leitmotifs/baddie decision (nokia bitchy ringtone).mp3"
 
     "Bass doesn't have time for this. There are more important things to life than a romantic partner he can’t use for clout." 
     "He blocks both dates before deleting their contacts. C U NVR."
@@ -449,6 +454,9 @@ label pt3_choice03_CoffeeShopObnoxious:
     jump pt3_choice03_Done
 
 label pt3_choice03_CoffeeShopBaddie:
+
+    play sound "Shared Audio Themes and Leitmotifs/baddie decision (nokia bitchy ringtone).mp3"
+
     "A swarm of amateur journalists descend upon the small shop, shoving microphones in the baristas’ faces."
 
     charNews "Is it true your oat milk is just regular milk with oats mixed in?"
@@ -500,6 +508,9 @@ label pt3_choice04_RestaurantObnoxious:
     jump pt3_choice04_Done
 
 label pt3_choice04_RestaurantBaddie:
+
+    play sound "Shared Audio Themes and Leitmotifs/baddie decision (nokia bitchy ringtone).mp3"
+
     "Bass ghosts both of his dates and assumes his true destiny."
     "In order to become the biggest baddie youtuber there ever was, he needs to make some big sacrifices…like ghosting the psychopath groupie and karen."
     "Woe is he. Such acts of martyrdom truly deserve recognition…from the algorithm."
@@ -541,6 +552,7 @@ label dateevil:
 
 label dateEvil_choice01_Compliment:
     show love_a_normal at middle
+
     
     charBass "You’re very…punctual."
 
@@ -553,6 +565,8 @@ label dateEvil_choice01_Compliment:
     charGfPsycho "I don’t like guys who are observant…that’s my job."
 
     charBass "(Yeah…I’m not getting a good vibe from her)."
+
+    play sound "Intro/Intro Pt2 Bass/wrong buzzer 6268.mp3"
 
     jump dateEvil_choice01_Done
     
@@ -589,6 +603,8 @@ label dateEvil_choice01_Dinner:
     show love_a_knife at middle
    
     charGfPsycho "Murder weapons, silly!"
+
+    play sound "Shared Audio Themes and Leitmotifs/ping-82822.mp3"
     
     hide love_a_knife
     jump dateEvil_choice01_Done
@@ -644,6 +660,7 @@ label dateEvil_choice02_Ask:
     "Bass is able to get [charGfPsycho] to calm down but she’s watching him closely, knife at the ready."
    
     hide love_a_normal
+    play sound "Intro/Intro Pt2 Bass/wrong buzzer 6268.mp3"
    
     jump dateEvil_choice02_Done
 
@@ -665,6 +682,8 @@ label dateEvil_choice02_Dismiss:
     "That makes her like him more."
     
     hide love_a_evil
+
+    play sound "Shared Audio Themes and Leitmotifs/ping-82822.mp3"
 
     jump dateEvil_choice02_Done
 
@@ -698,6 +717,8 @@ label dateEvil_choice03_JokeNo:
     charGfPsycho "Ugh. Lame."
 
     hide love_a_bored
+
+    play sound "Intro/Intro Pt2 Bass/wrong buzzer 6268.mp3"
    
     jump dateEvil_choice03_Done
 
@@ -725,6 +746,8 @@ label dateEvil_choice03_JokeYes:
     show love_a_knife at middle
     
     "The murder-y way."
+
+    play sound "Shared Audio Themes and Leitmotifs/ping-82822.mp3"
     
     hide love_a_knife
     jump dateEvil_choice03_Done
@@ -816,6 +839,8 @@ label dateObnoxious_choice01_Scene:
     
     "The guy at reception ushers them in, face red. The people still in line give both of them the stink-eye as you pass."
 
+    play sound "Shared Audio Themes and Leitmotifs/ping-82822.mp3"
+
     jump dateObnoxious_choice01_Done
 
 
@@ -841,6 +866,8 @@ label dateObnoxious_choice01_Game:
     "Bass stands in silence for the long ten minutes it takes them to get in."
     "[charGfKaren] rants about poor customer service the whole time."
     "Bass adores him."
+
+    play sound "Intro/Intro Pt2 Bass/wrong buzzer 6268.mp3"
 
     jump dateObnoxious_choice01_Done
 
@@ -902,6 +929,8 @@ label dateObnoxious_choice02_Trip:
 
     "They get kicked out instantly."
 
+    play sound "Intro/Intro Pt2 Bass/wrong buzzer 6268.mp3"
+
     jump dateObnoxious_choice02_Done
 
 label dateObnoxious_choice02_Manager:
@@ -923,6 +952,8 @@ label dateObnoxious_choice02_Manager:
     hide love_b_normal_thinking
     
     "They quietly pay the bill and leave."
+
+    play sound "Shared Audio Themes and Leitmotifs/ping-82822.mp3"
 
     jump dateObnoxious_choice02_Done
     
@@ -966,6 +997,8 @@ label dateObnoxious_choice03_Review:
     "The restaurant is to close the very next day."
     "The staff hires a hitman for the couple as soon as they get the notice."
 
+    play sound "Shared Audio Themes and Leitmotifs/ping-82822.mp3"
+
     jump dateObnoxious_choice03_Done
 
 label dateObnoxious_choice03_Kiss:
@@ -987,6 +1020,8 @@ label dateObnoxious_choice03_Kiss:
     charGfKaren "You wish! Dude...we are SO not there yet."
     
     hide love_b_bored
+
+    play sound "Intro/Intro Pt2 Bass/wrong buzzer 6268.mp3"
     
     jump dateObnoxious_choice03_Done
 
@@ -1038,11 +1073,14 @@ label endingEvil:
 
 label endingBaddie:
     $ endingId = "Baddie"
+
     
     scene bg_fog
     with fastDissolve
 
     show bass_covered_croptop at middle
+
+    play sound "Endings/Baddie/crowd-screaming-6850 (mp3cut.net).mp3"
 
     "Bass blows up overnight." 
     "People just can’t get enough of him. He’s on the cover of every magazine still in print and his name is on everybody’s lips."
@@ -1050,6 +1088,8 @@ label endingBaddie:
     
     hide bass_covered_croptop
     show cg_apology video
+
+    play sound "Endings/Baddie/apocalypse-128378.mp3"
     
     "He’s uncancelable. When he sits down in a gray hoodie, fake tears bottle in hand, and PR statement just off screen the internet forgives their favorite white man."
     "Youtube has to beef up their website just to handle the amount of traffic he generates."
