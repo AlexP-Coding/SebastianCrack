@@ -972,6 +972,8 @@ label endingEvil:
     $ endingId = "Evil"
     
     show bg_evil_end_world
+
+   
     
     "The rumor about cards and banks goes beyond what Bass could’ve imagined."
     "The banks are mysteriously drained of their assets. They all file for bankruptcy."
