@@ -490,7 +490,7 @@ label pt3_choice04_RestaurantObnoxious:
     jump pt3_choice04_Done
 
 label pt3_choice04_RestaurantBaddie:
-    
+
     play sound "Shared Audio Themes and Leitmotifs/baddie decision (nokia bitchy ringtone).mp3"
 
     "Bass ghosts both of his dates and assumes his true destiny."
@@ -534,6 +534,7 @@ label dateevil:
 
 label dateEvil_choice01_Compliment:
     show love_a_normal at middle
+
     
     charBass "You’re very…punctual."
 
@@ -546,6 +547,8 @@ label dateEvil_choice01_Compliment:
     charGfPsycho "I don’t like guys who are observant…that’s my job."
 
     charBass "(Yeah…I’m not getting a good vibe from her)."
+
+    play sound "Intro/Intro Pt2 Bass/wrong buzzer 6268.mp3"
 
     jump dateEvil_choice01_Done
     
@@ -582,6 +585,8 @@ label dateEvil_choice01_Dinner:
     show love_a_knife at middle
    
     charGfPsycho "Murder weapons, silly!"
+
+    play sound "Shared Audio Themes and Leitmotifs/ping-82822.mp3"
     
     hide love_a_knife
     jump dateEvil_choice01_Done
@@ -637,6 +642,7 @@ label dateEvil_choice02_Ask:
     "Bass is able to get [charGfPsycho] to calm down but she’s watching him closely, knife at the ready."
    
     hide love_a_normal
+    play sound "Intro/Intro Pt2 Bass/wrong buzzer 6268.mp3"
    
     jump dateEvil_choice02_Done
 
@@ -658,6 +664,8 @@ label dateEvil_choice02_Dismiss:
     "That makes her like him more."
     
     hide love_a_evil
+
+    play sound "Shared Audio Themes and Leitmotifs/ping-82822.mp3"
 
     jump dateEvil_choice02_Done
 
@@ -691,6 +699,8 @@ label dateEvil_choice03_JokeNo:
     charGfPsycho "Ugh. Lame."
 
     hide love_a_bored
+
+    play sound "Intro/Intro Pt2 Bass/wrong buzzer 6268.mp3"
    
     jump dateEvil_choice03_Done
 
@@ -718,6 +728,8 @@ label dateEvil_choice03_JokeYes:
     show love_a_knife at middle
     
     "The murder-y way."
+
+    play sound "Shared Audio Themes and Leitmotifs/ping-82822.mp3"
     
     hide love_a_knife
     jump dateEvil_choice03_Done
@@ -809,6 +821,8 @@ label dateObnoxious_choice01_Scene:
     
     "The guy at reception ushers them in, face red. The people still in line give both of them the stink-eye as you pass."
 
+    play sound "Shared Audio Themes and Leitmotifs/ping-82822.mp3"
+
     jump dateObnoxious_choice01_Done
 
 
@@ -834,6 +848,8 @@ label dateObnoxious_choice01_Game:
     "Bass stands in silence for the long ten minutes it takes them to get in."
     "[charGfKaren] rants about poor customer service the whole time."
     "Bass adores him."
+
+    play sound "Intro/Intro Pt2 Bass/wrong buzzer 6268.mp3"
 
     jump dateObnoxious_choice01_Done
 
@@ -895,6 +911,8 @@ label dateObnoxious_choice02_Trip:
 
     "They get kicked out instantly."
 
+    play sound "Intro/Intro Pt2 Bass/wrong buzzer 6268.mp3"
+
 label dateObnoxious_choice02_Manager:
 
     charBass "I'd like to call the manager, please."
@@ -914,6 +932,8 @@ label dateObnoxious_choice02_Manager:
     hide love_b_normal_thinking
     
     "They quietly pay the bill and leave."
+
+    play sound "Shared Audio Themes and Leitmotifs/ping-82822.mp3"
 
     jump dateObnoxious_choice02_Done
     
@@ -957,6 +977,8 @@ label dateObnoxious_choice03_Review:
     "The restaurant is to close the very next day."
     "The staff hires a hitman for the couple as soon as they get the notice."
 
+    play sound "Shared Audio Themes and Leitmotifs/ping-82822.mp3"
+
     jump dateObnoxious_choice03_Done
 
 label dateObnoxious_choice03_Kiss:
@@ -978,6 +1000,8 @@ label dateObnoxious_choice03_Kiss:
     charGfKaren "You wish! Dude...we are SO not there yet."
     
     hide love_b_bored
+
+    play sound "Intro/Intro Pt2 Bass/wrong buzzer 6268.mp3"
     
     jump dateObnoxious_choice03_Done
 
