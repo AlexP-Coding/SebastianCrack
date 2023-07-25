@@ -973,7 +973,7 @@ label endingEvil:
     
     show bg_evil_end_world
 
-   
+    play sound "Endings/Evil/chaosmp3-14692.mp3"
     
     "The rumor about cards and banks goes beyond what Bass could’ve imagined."
     "The banks are mysteriously drained of their assets. They all file for bankruptcy."
@@ -983,8 +983,11 @@ label endingEvil:
     
     hide bg_evil_end_world
     show bg_explosion
+    play sound "Endings/Love Yourself/explosion-42132 (1).mp3"
     
     "The Earth was literally shaken to its core. It’s too much. In one instant, it’s all gone."
+
+    
     
     hide BG_EXPLOSION
     show bg_fog
@@ -1164,7 +1167,6 @@ label endingLoveYourself_choice01_Done:
 
     charBass "Nuh uh. I’m not doing this. I just want my sweater and…love."
     
-    play sound "Endings/Love Yourself/explosion-42132 (1).mp3"
    
     play sound "Endings/Love Yourself/oh-no-the-car-exploded-10632.mp3"
 
