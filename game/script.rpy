@@ -189,6 +189,7 @@ label fake_start:
         
 
 label pt1_choice01_Done:
+    play sound "Intro/Intro Pt2 Bass/cash-register-141427.mp3" 
     
     "Bass buys the sweater. He receives five cents in his bank account."
 
@@ -205,6 +206,8 @@ label pt1_choice01_Done:
     show bg_bass_house
     
     charBass "Ok, let’s see how I look."
+
+    play sound "Intro/Intro Pt2 Bass/camera-13695.mp3" 
 
     charBass "…"
 
@@ -251,6 +254,7 @@ label pt1_choice02_ByeParentsNo:
 
 # CHOICE END
 label pt1_choice02_Done:
+    play sound "Intro/Intro Pt2 Bass/door creaking 01.mp3" 
     charBass "The guys at Wishy-Washy are insane…I'll bet this sweater-top isn't even THAT haunted."
 
 
