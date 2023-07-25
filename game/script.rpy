@@ -375,6 +375,8 @@ label pt3_choice01_Done:
     "Bass continues on. He’s on a mission of the utmost importance...For iced coffee."
     
     show cg_phone_message
+    play sound "Shared Audio Themes and Leitmotifs/friend-request-14878.mp3"
+
     
     "On his way, his phone dings twice."
     "Both of his dates text him. Who should be blessed with his attention?"
