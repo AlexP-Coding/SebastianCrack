@@ -154,7 +154,8 @@ label fake_start:
 
     charArmy "Chargeee! Ahhh!"
 
-    play sound "Intro/Intro Pt1 Seb/battle-screaming-36126 (1).mp3" play sound "Intro/Intro Pt1 Seb/bloody-blade-103593 (1).mp3"
+    play sound "Intro/Intro Pt1 Seb/battle-screaming-36126 (1).mp3" 
+    play sound "Intro/Intro Pt1 Seb/bloody-blade-103593 (1).mp3"
 
 
 
