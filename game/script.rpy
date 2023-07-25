@@ -141,6 +141,7 @@ label fake_start:
     "A long time ago, far far deep into the lands of Morocco a portuguese king was acting like a teenage brat."
     
     "This king was 24 years old."
+    "He also had deligthfully scrollable horse."
 
     #show sebastian
 
