@@ -425,6 +425,7 @@ label pt3_choice02_Done:
     hide cg_phone_message
     scene bg_coffeeshop
 
+    play sound "Shared Audio Themes and Leitmotifs/busy-coffee-shop-counter-field-recording-17643.mp3"
     "Bass arrives at the coffee shop. The place is packed, the counter and cashier blocked by an endless sea of people."
     "Bass rolls his eyes. What does a guy have to do to get a cup of coffee?"
     charSweater "You know what to do…"
