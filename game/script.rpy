@@ -1,4 +1,4 @@
-# The script of the game goes in this file.
+﻿# The script of the game goes in this file.
 
 ```
 To add:
@@ -586,6 +586,8 @@ label dateEvil_choice01_Compliment:
 
 label dateEvil_choice01_Dinner:
     charBass "Well then, we should head in for our totally budget friendly I can afford this this is totally worth every penny and priced reasonably dinner."
+
+    play sound "Dates/Date Evil/bonk-sound-effect-36055.mp3"
     
     "Bass opens the door and goes in first, not even waiting for her. It swings backwards and smacks her in the face. Her nose starts bleeding."
     "She licks the blood and smiles before following him inside."
@@ -604,6 +606,8 @@ label dateEvil_choice01_Dinner:
     
     hide love_a_normal
     show love_a_happy_knife at middle
+
+    play sound "Dates/Date Evil/knife-slice-41231 (1).mp3"
     
     "She whips out a gigantic kitchen, shiny and sparkling and omg…is that dried blood on the handle?"
 
@@ -660,6 +664,8 @@ label dateEvil_choice02_Ask:
     
     hide love_a_bored
     show love_a_knife at middle
+
+    play sound "Dates/Date Evil/knife-slice-41231 (1).mp3"
     
     charGfPsycho "Only someone with secrets to hide would be so defensive. Your body language says it all."
 
@@ -757,6 +763,8 @@ label dateEvil_choice03_JokeYes:
    
     hide love_a_happy
     show love_a_knife at middle
+    
+    play sound "Dates/Date Evil/knife-slice-41231 (1).mp3"
     
     "The murder-y way."
 
@@ -928,6 +936,9 @@ label dateObnoxious_choice01_Done:
 
 label dateObnoxious_choice02_Trip:
     "Bass trips the waiter once she goes to show them the bill (1000 cents! Outrageous!)."
+
+    play sound "Dates/Date Obnoxious/shielddrop-94887.mp3"
+    
     "The waiter spills the tray full of food on [charGfKaren]'s shoes."
     "Bass sees his past lives flash before his eyes."
     
