@@ -1004,9 +1004,12 @@ label endingEvil:
 
 label endingBaddie:
     $ endingId = "Baddie"
+
     
     show bg_fog
     show bass_covered_croptop at middle
+
+    play sound "Endings/Baddie/crowd-screaming-6850 (mp3cut.net).mp3"
 
     "Bass blows up overnight." 
     "People just can’t get enough of him. He’s on the cover of every magazine still in print and his name is on everybody’s lips."
@@ -1015,6 +1018,8 @@ label endingBaddie:
     hide bass_covered_croptop
     hide bg_fog
     show cg_apology video
+
+    play sound "Endings/Baddie/apocalypse-128378.mp3"
     
     "He’s uncancelable. When he sits down in a gray hoodie, fake tears bottle in hand, and PR statement just off screen the internet forgives their favorite white man."
     "Youtube has to beef up their website just to handle the amount of traffic he generates."
