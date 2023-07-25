@@ -1,4 +1,4 @@
-# The script of the game goes in this file.
+﻿# The script of the game goes in this file.
 
 ```
 To add:
@@ -325,6 +325,7 @@ label pt3_choice01_DontHelpEvil:
 
 
 label pt3_choice01_DontHelpObnoxious:
+
     "Bass pulls out his phone, flipping it on queue. The mountain of charms just about misses their lobster red faces."
     "He cosplays as a productive member of society."
 
@@ -335,6 +336,8 @@ label pt3_choice01_DontHelpObnoxious:
 label pt3_choice01_DontHelpBaddie:
     
     show bass_covered_short at middle
+
+    play sound "Shared Audio Themes and Leitmotifs/baddie decision (nokia bitchy ringtone).mp3"
     
     "Bass greets the strangers with a cheshire grin, looking at the destination on their phone."
     "He scoffs, convinces them it’s not worth their time. Instead, he suggests somewhere better, more fun he says."
@@ -379,6 +382,8 @@ label pt3_choice02_TextDateObnoxious:
 
 label pt3_choice02_TextDateBaddie:
     show cg_phone_turnedoff
+
+    play sound "Shared Audio Themes and Leitmotifs/baddie decision (nokia bitchy ringtone).mp3"
 
     "Bass doesn't have time for this. There are more important things to life than a romantic partner he can’t use for clout." 
     "He blocks both dates before deleting their contacts. C U NVR."
@@ -431,6 +436,9 @@ label pt3_choice03_CoffeeShopObnoxious:
     jump pt3_choice03_Done
 
 label pt3_choice03_CoffeeShopBaddie:
+
+    play sound "Shared Audio Themes and Leitmotifs/baddie decision (nokia bitchy ringtone).mp3"
+
     "A swarm of amateur journalists descend upon the small shop, shoving microphones in the baristas’ faces."
 
     charNews "Is it true your oat milk is just regular milk with oats mixed in?"
@@ -482,6 +490,9 @@ label pt3_choice04_RestaurantObnoxious:
     jump pt3_choice04_Done
 
 label pt3_choice04_RestaurantBaddie:
+    
+    play sound "Shared Audio Themes and Leitmotifs/baddie decision (nokia bitchy ringtone).mp3"
+
     "Bass ghosts both of his dates and assumes his true destiny."
     "In order to become the biggest baddie youtuber there ever was, he needs to make some big sacrifices…like ghosting the psychopath groupie and karen."
     "Woe is he. Such acts of martyrdom truly deserve recognition…from the algorithm."
