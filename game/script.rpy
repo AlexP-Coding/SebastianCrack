@@ -1320,6 +1320,8 @@ label endingRejected:
     $ endingId = "Rejected"
     show bg_restaurant_outside
 
+    play sound "Endings/Rejected/the-wait-138639 (2).mp3"
+
     "As the date kept getting longer and longer, Bass’ date began moving frantically. Desperately looking around, searching for something to help them escape."
 
     charBass "Ohh did the date food also touch your innards? You look like you’re about to produce a very nasty surprise."
@@ -1335,9 +1337,12 @@ label endingRejected:
     "Awaiting the return of his date, Bass had spent the last 5 hours behind the local Sweet Drop supermarket."
     "As the poor soulless employees left, they stared with pity into the eyes of someone who had even less soul. "
     "Heartbroken, Bass decided to become one with the Sweet Drop."
+    play sound "Endings/Rejected/evil-mouth-ensemble-78778 (2).mp3"
     
     hide bg_sweetdrop
     show bg_sweetdrop_sacrifice
+    
+    
    
     "Even to this day, the employees perform paganic rituals around all that remains of him."
     "A simple sweater."
