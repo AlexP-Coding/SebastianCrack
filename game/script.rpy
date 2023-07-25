@@ -1,4 +1,4 @@
-﻿# The script of the game goes in this file.
+# The script of the game goes in this file.
 
 ```
 To add:
@@ -168,6 +168,7 @@ label fake_start:
 
     "As the shores in Portugal filled with fog, and the population prayed for Sebastian’s return, his beautiful garments were lost forever..."
 
+    play sound "Intro/Intro Pt2 Bass/harp-glissando-with-chimes-sound-effect-128349.mp3"
     "{cps=2}Until…{/cps}"
 
 
@@ -177,6 +178,8 @@ label fake_start:
 
     ##### INTRO BASS #####
 
+    play sound "Intro/Intro Pt2 Bass/eco-technology-145636.mp3"
+
     charBass "Holy monarchy, is that the long lost 1548 D.Sebastian hot crop top?"
 
     "Bass has been tenderly stealing D.Sebastian-related artifacts from museums all his life"
@@ -184,23 +187,29 @@ label fake_start:
 
     charBass "I can’t believe it! I don’t even have to incapacitate a guard for this one!"
 
+    stop sound fadeout 1
+
     menu:
         "Buy the sweater":
             jump pt1_choice01_Done
 
         "Heck yeah, buy the sweater":
             jump pt1_choice01_Done
+
         
 
 label pt1_choice01_Done:
+    play sound "Intro/Intro Pt2 Bass/cash-register-141427.mp3" 
     
     "Bass buys the sweater. He receives five cents in his bank account."
 
+    play sound "Intro/Intro Pt2 Bass/success fanfare trumpets 6185.mp3"
     charBass "Whoop!"
 
     "The package then gets held hostage in customs."
-    "He’s forced to pay up a whole six dollars."
 
+    play sound "Intro/Intro Pt2 Bass/wrong buzzer 6268.mp3"
+    "He’s forced to pay up a whole six dollars."
     charBass "Son of Aviz!"
 
     "After a not-so-grueling two-hour-turned-twelve-hour trip, the hot crop top not-so-soon reaches Bass’ stingy hands."
@@ -210,10 +219,13 @@ label pt1_choice01_Done:
     
     charBass "Ok, let’s see how I look."
 
+    play sound "Intro/Intro Pt2 Bass/camera-13695.mp3" 
+
     charBass "…"
 
     show bass_covered_full at middle
 
+    play sound "Intro/Intro Pt2 Bass/ohoh-yeh-91690.mp3"
     charBass_loud "{=slayBig}Perfect!{/slay}"
     charBass "Hot as an inbred king. I don't even need pants!"
 
@@ -225,6 +237,7 @@ label pt1_choice01_Done:
 
     hide bass_covered_full
 
+    play sound "Intro/Intro Pt2 Bass/futuristic-logo-3-versions-149429.mp3"
     menu:
         "Say goodbye":
             jump pt1_choice02_ByeParentsYes
@@ -255,8 +268,14 @@ label pt1_choice02_ByeParentsNo:
 
 # CHOICE END
 label pt1_choice02_Done:
-    charBass "The guys at Wishy-Washy are insane…I'll bet this sweater-top isn't even THAT haunted."
+    play sound "Intro/Intro Pt2 Bass/door creaking 01.mp3" 
+    play music "Intro/Intro Pt2 Bass/sinister 156638.mp3"
+    charBass "The guys at Wishy-Washy are insane…"
+    stop sound fadeout 1
+    charBass "I'll bet this sweater-top isn't even THAT haunted."
 
+    play sound "Intro/Intro Pt2 Bass/door close 9.wav"
+    stop music fadeout 1
 
     ##### CHOICES #####
     
@@ -966,7 +985,8 @@ label dateObnoxious_choice03_Done:
 
 label endingEvil:
     $ endingId = "Evil"
-    
+
+    play sound "Endings/Evil/chaosmp3-14692.mp3"
     scene bg_evil_end_world
     with slowDissolve
 
@@ -977,10 +997,12 @@ label endingEvil:
     "There’s blood in the streets. Planes start dropping like flies. "
     "There are fires everywhere. This causes the Earth to heat up so significantly it speeds up the climate crisis. The ground begins to physically boil."
     
+    play sound "Endings/Love Yourself/explosion-42132 (1).mp3"
     scene bg_explosion
     with slowDissolve
     
     "The Earth was literally shaken to its core. It’s too much. In one instant, it’s all gone."
+
     
     scene bg_fog
     with slowishDissolve
@@ -1165,7 +1187,6 @@ label endingLoveYourself_choice01_Done:
 
     charBass "Nuh uh. I’m not doing this. I just want my sweater and…love."
     
-    play sound "Endings/Love Yourself/explosion-42132 (1).mp3"
    
     play sound "Endings/Love Yourself/oh-no-the-car-exploded-10632.mp3"
 
