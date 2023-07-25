@@ -573,6 +573,8 @@ label dateEvil_choice01_Dinner:
     
     hide love_a_normal
     show love_a_happy_knife at middle
+
+    play sound "Dates/Date Evil/knife-slice-41231 (1).mp3"
     
     "She whips out a gigantic kitchen, shiny and sparkling and omg…is that dried blood on the handle?"
 
@@ -629,6 +631,8 @@ label dateEvil_choice02_Ask:
     
     hide love_a_bored
     show love_a_knife at middle
+
+    play sound "Dates/Date Evil/knife-slice-41231 (1).mp3"
     
     charGfPsycho "Only someone with secrets to hide would be so defensive. Your body language says it all."
 
@@ -726,6 +730,8 @@ label dateEvil_choice03_JokeYes:
    
     hide love_a_happy
     show love_a_knife at middle
+    
+    play sound "Dates/Date Evil/knife-slice-41231 (1).mp3"
     
     "The murder-y way."
 
