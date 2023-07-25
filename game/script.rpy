@@ -925,7 +925,7 @@ label dateObnoxious_choice02_Trip:
     "Bass trips the waiter once she goes to show them the bill (1000 cents! Outrageous!)."
 
     play sound "Dates/Date Obnoxious/shielddrop-94887.mp3"
-    
+
     "The waiter spills the tray full of food on [charGfKaren]'s shoes."
     "Bass sees his past lives flash before his eyes."
     
