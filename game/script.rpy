@@ -322,15 +322,19 @@ label pt1_choice02_Done:
     menu:
         "Send them in the wrong direction":
             $ nrEvilChoices += 1
+            play sound "Shared Audio Themes and Leitmotifs/evil decision (possessed-laugh-94851).mp3"
             jump pt3_choice01_DontHelpEvil
 
         "Ignore them.":
             $ nrObnoxiousChoices += 1
+            play sound "Shared Audio Themes and Leitmotifs/obnoxious decision (ahem-83637).mp3"
             jump pt3_choice01_DontHelpObnoxious
 
         "Redirect them to somewhere more fun.":
             $ nrBaddieChoices += 1
+            play sound "Shared Audio Themes and Leitmotifs/baddie decision (nokia bitchy ringtone).mp3"
             jump pt3_choice01_DontHelpBaddie
+
 
 label pt3_choice01_DontHelpEvil:
     "Bass isn’t in the mood to play tour guide so he directs them in the opposite direction, up a long steep cobblestone street."
@@ -378,14 +382,17 @@ label pt3_choice01_Done:
     menu:
         "Text [charGfPsycho.name].":
             $ nrEvilChoices += 1 
+            play sound "Shared Audio Themes and Leitmotifs/evil decision (possessed-laugh-94851).mp3"
             jump pt3_choice02_TextDateEvil
 
         "Text [charGfKaren.name].":
             $ nrObnoxiousChoices += 1 
+            play sound "Shared Audio Themes and Leitmotifs/obnoxious decision (ahem-83637).mp3"
             jump pt3_choice02_TextDateObnoxious
         
         "Block both.":
             $ nrBaddieChoices += 1 
+            play sound "Shared Audio Themes and Leitmotifs/baddie decision (nokia bitchy ringtone).mp3"
             jump pt3_choice02_TextDateBaddie
 
 
@@ -421,15 +428,18 @@ label pt3_choice02_Done:
 
     menu:
         "Call in a bomb threat.":
-            $ nrEvilChoices += 1 
+            $ nrEvilChoices += 1
+            play sound "Shared Audio Themes and Leitmotifs/evil decision (possessed-laugh-94851).mp3" 
             jump pt3_choice03_CoffeeShopEvil
 
         "Steal it.":
-            $ nrObnoxiousChoices += 1 
+            $ nrObnoxiousChoices += 1
+            play sound "Shared Audio Themes and Leitmotifs/obnoxious decision (ahem-83637).mp3" 
             jump pt3_choice03_CoffeeShopObnoxious
 
         "Call the tabloids.":
             $ nrBaddieChoices += 1 
+            play sound "Shared Audio Themes and Leitmotifs/baddie decision (nokia bitchy ringtone).mp3"
             jump pt3_choice03_CoffeeShopBaddie
 
 label pt3_choice03_CoffeeShopEvil:
@@ -485,14 +495,17 @@ label pt3_choice03_Done:
     menu:
         "Start a rumor.":
             $ nrEvilChoices += 1 
+            play sound "Shared Audio Themes and Leitmotifs/evil decision (possessed-laugh-94851).mp3"
             jump pt3_choice04_RestaurantEvil
 
         "Cyber stalk the restaurant staff.":
             $ nrObnoxiousChoices += 1 
+            play sound "Shared Audio Themes and Leitmotifs/obnoxious decision (ahem-83637).mp3"
             jump pt3_choice04_RestaurantObnoxious
 
         "Ghost them.":
             $ nrBaddieChoices += 1 
+            play sound "Shared Audio Themes and Leitmotifs/baddie decision (nokia bitchy ringtone).mp3"
             jump pt3_choice04_RestaurantBaddie
 
 
