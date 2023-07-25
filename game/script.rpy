@@ -16,9 +16,13 @@ transform middle:
     xalign 0.5
     zoom 1.20
 
+define fastDissolve = Dissolve(0.3)
+define slowDissolve = Dissolve(0.8)
+define slowishDissolve = Dissolve(0.5)
+
 # CHARACTER COLORS
 define bgCharColorA = "#1d53a5"
-define bgCharColorB = "#aaaaaa"
+define bgCharColorB = "#28c7bc"
 
 # TEXT COLORS
 define baddieColor = "#ff00ea"
@@ -56,15 +60,15 @@ define charSeb = Character("King D.Sebastian", color="#ca0a0a")
 define charBass = Character("Bass", color = "#df7233")
 define charBass_loud = Character(kind=charBass, what_size=34)
 define charGfPsycho = Character("Charlie Mason", color = "#43cc19")
-define charGfKaren = Character("Kar Enn", color = "#ffcccc")
-define charSweater = Character("Wooly whisper", size=15, color="#ca0a0a")
+define charGfKaren = Character("Kar Enn", color = "#bd4ae0")
+define charSweater = Character("Wooly whisper", size=25, color="#ca0a0a")
 
 # BackgroundCharacters
 define charArmy = Character("Army", color = bgCharColorA, what_size=34)
 define charBMom = Character("Bass’s Mom Who Is Visiting", color = bgCharColorA)
 define charBDad = Character("Bass’s Dad Who Is Visiting", color = bgCharColorB)
 define charNews = Character("Journalist", color=bgCharColorA)
-define charMail = Character("Maiman", color=bgCharColorA)
+define charMail = Character("Mailman", color=bgCharColorA)
 
 define currentGfriend = charGfPsycho
 
@@ -202,7 +206,7 @@ label pt1_choice01_Done:
     "After a not-so-grueling two-hour-turned-twelve-hour trip, the hot crop top not-so-soon reaches Bass’ stingy hands."
     
     hide cg_wishywash
-    show bg_bass_house
+    scene bg_bass_house
     
     charBass "Ok, let’s see how I look."
 
@@ -256,8 +260,8 @@ label pt1_choice02_Done:
 
     ##### CHOICES #####
     
-    hide bg_bass_house
-    show bg_lisboa
+    scene bg_lisboa
+    with slowDissolve
 
     "As Bass leaves his luxurious condo, (no, there’s no sarcasm there, this is what counts as luxury in Lisbon in 2023 if you’re a local) he is greeted with only the freshest air the city can provide."
     
@@ -367,8 +371,7 @@ label pt3_choice02_TextDateBaddie:
 
 label pt3_choice02_Done:
     hide cg_phone_message
-    hide bg_lisboa
-    show bg_coffeeshop
+    scene bg_coffeeshop
 
     "Bass arrives at the coffee shop. The place is packed, the counter and cashier blocked by an endless sea of people."
     "Bass rolls his eyes. What does a guy have to do to get a cup of coffee?"
@@ -394,7 +397,6 @@ label pt3_choice03_CoffeeShopEvil:
     "He waits two minutes before making the actual call. Bass hears the symphony of screams and gas and people being trampled."
     "When the coast is clear he skips over to the counter and collects his rightful, free and well earned cup of coffee. "
     
-    hide bg_coffeeshop
     
     jump pt3_choice03_Done
 
@@ -406,7 +408,6 @@ label pt3_choice03_CoffeeShopObnoxious:
     "People gather around him, too distracted by the scene to go after the iced coffee thief."
     "The corporation worth millions doesn’t offer him health insurance. Poor guy."
     
-    hide bg_coffeeshop
     
     jump pt3_choice03_Done
 
@@ -422,14 +423,14 @@ label pt3_choice03_CoffeeShopBaddie:
     "He also slips a few cartons of milk into his tote bag for good measure."
     
     hide bass_covered_croptop
-    hide bg_coffeeshop
     
     jump pt3_choice03_Done
 
 
 label pt3_choice03_Done:
 
-    show bg_restaurant_outside
+    scene bg_restaurant_outside
+    with fastDissolve
 
     "It’s almost time for his date and he’s starting to get nervous."
     "Bass stands outside the restaurant. What should he do?"
@@ -525,8 +526,8 @@ label dateEvil_choice01_Dinner:
     "Bass opens the door and goes in first, not even waiting for her. It swings backwards and smacks her in the face. Her nose starts bleeding."
     "She licks the blood and smiles before following him inside."
     
-    hide bg_restaurant_outside
-    show bg_restaurant_inside
+    scene bg_restaurant_inside
+    with fastDissolve
    
     "Dinner is going smoothly, with Bass uncharacteristically ordering the most expensive thing on the menu, fully planning on making his date pay for it."
     "Charlie orders the steak so rare it’s practically raw, and mentions something about the redness of the blood being oh so vibrant."
@@ -557,12 +558,13 @@ label dateEvil_choice01_Dinner:
 
 
 label dateEvil_choice01_Done:
-    hide bg_restaurant_outside
-    show bg_restaurant_inside
+    scene bg_restaurant_inside
+    with fastDissolve
+
     charBass "..."
 
     charSweater "We should probably get to know her weaknesses."
-    charSweater "You know. In case she kills you."
+    charSweater "You know. In case she tries to kill you."
 
     menu:
         "Ask about her interests.":
@@ -688,7 +690,6 @@ label dateEvil_choice03_JokeYes:
     "The murder-y way."
     
     hide love_a_knife
-    hide bg_restaurant_inside
     jump dateEvil_choice03_Done
 
 
@@ -735,7 +736,7 @@ label dateObnoxious:
     "He had forgone making a reservation to spare cash, but now there's a line of exactly three people."
     "They are looking at possibly twenty minutes of boredom unless they somehow disappear."
 
-    charSweater "I think we should <i>get rid of the problem</i>."
+    charSweater "I think we should {i}get rid of the problem{/i}."
 
     "Bass steadies himself."
 
@@ -808,8 +809,8 @@ label dateObnoxious_choice01_Game:
 
 
 label dateObnoxious_choice01_Done:
-    hide bg_restaurant_outside
-    show bg_restaurant_inside
+    scene bg_restaurant_inside
+    with fastDissolve
     
     "Bass and his date finally make it inside the restaurant."
 
@@ -888,17 +889,16 @@ label dateObnoxious_choice02_Manager:
     
 
 label dateObnoxious_choice02_Done:
-    hide bg_restaurant_inside
-    show bg_restaurant_outside
+    scene bg_restaurant_outside
     show love_b_normal at middle
     
     charGfKaren "Well. That was that."
     
     hide love_b_normal
-    hide bg_restaurant_outside
-    show bg_sweetdrop
+    scene bg_sweetdrop
+    with fastDissolve
     
-    "They end up taking a walk, pausing near the local Sweet Drop supermarket."
+    "They end up going for a walk, pausing near the local Sweet Drop supermarket."
     
     show love_b_normal_thinking at middle
     
@@ -967,7 +967,9 @@ label dateObnoxious_choice03_Done:
 label endingEvil:
     $ endingId = "Evil"
     
-    show bg_evil_end_world
+    scene bg_evil_end_world
+    with slowDissolve
+
     
     "The rumor about cards and banks goes beyond what Bass could’ve imagined."
     "The banks are mysteriously drained of their assets. They all file for bankruptcy."
@@ -975,17 +977,16 @@ label endingEvil:
     "There’s blood in the streets. Planes start dropping like flies. "
     "There are fires everywhere. This causes the Earth to heat up so significantly it speeds up the climate crisis. The ground begins to physically boil."
     
-    hide bg_evil_end_world
-    show bg_explosion
+    scene bg_explosion
+    with slowDissolve
     
     "The Earth was literally shaken to its core. It’s too much. In one instant, it’s all gone."
     
-    hide BG_EXPLOSION
-    show bg_fog
+    scene bg_fog
+    with slowishDissolve
     
     "Atmosphere popped. Thousands of years of existence sprinkled throughout the cosmos as if it were mere decoration."
     
-    hide bg_fog
     show main_menu
     
     "And the only proof any of it ever mattered...is a sweater."
@@ -996,7 +997,9 @@ label endingEvil:
 label endingBaddie:
     $ endingId = "Baddie"
     
-    show bg_fog
+    scene bg_fog
+    with fastDissolve
+
     show bass_covered_croptop at middle
 
     "Bass blows up overnight." 
@@ -1004,7 +1007,6 @@ label endingBaddie:
     "Plastic surgeons are booked for months on end with people desperate to recreate his juicy lips."
     
     hide bass_covered_croptop
-    hide bg_fog
     show cg_apology video
     
     "He’s uncancelable. When he sits down in a gray hoodie, fake tears bottle in hand, and PR statement just off screen the internet forgives their favorite white man."
@@ -1015,7 +1017,15 @@ label endingBaddie:
 
 label endingDateDisappears:
     $ endingId = "Date Disappears"
-    show bg_fog
+
+    scene bg_fog
+    with fastDissolve
+
+    currentGfriend "So. It's cold...ish."
+    currentGfriend "You know what a good boyfriend does to help his date when it's cold."
+
+    "[currentGfriend.name] looks pointedly at the single piece of clothing Bass is wearing."
+
     charBass "You want my...sweater?"
     charBass "You mean my precious D.Sebastian long lost now found hot crop top?!"
     charBass "But, [currentGfriend.name], it's all I have!"
@@ -1048,7 +1058,6 @@ label endingDateDisappears:
     charBass "I'm going back to bed. At least my D.Sebastian poster won't disappear on me."
 
     if datedEvil and datedObnoxious:
-        hide bg_fog
         jump endingLoveYourself
  
     "Bass goes home to wallow in peace. He cries himself to sleep and wonders if he should try again."
@@ -1061,24 +1070,22 @@ label endingDateDisappears:
 label endingLoveYourself:
     $ endingId = "Love Yourself"
     
-    show bg_lisboa
+    scene bg_lisboa
 
     play sound "Endings/Love Yourself/dark-piano-more-on-spotify-bruno-magic-152569 (mp3cut.net) (1).mp3"
     
     " Bass, naked once more on the cold cobbled streets, begins to head home, while avoiding the gaze of the drunk men in sad beige trousers."
-    hide bg_lisboa
-    show bg_bass_house
+    scene bg_bass_house
     
     "Once at home, Bass gazed once more upon his precious poster."
 
     charBass "Oh, why can’t I be hot and sexy like you… Your luscious lips, your creamy, inbred skin…"
     charBass "*sigh* How many ladies must you have pulled in your hay day. Why can’t I just be you!"
 
-    hide bg_bass_house
 
     "Once more, our dear Bass cried himself to sleep. However, in the next morning, an even worse surprise awaited him."
     
-    show bg_bass_house
+    scene bg_bass_house
 
     "On that Friday morning, the mailman appeared for the first time that week. Bass believed it was his treasured sweater."
     "But alas, his sweater had been kidnapped by a nefarious being: the post office!"
@@ -1125,7 +1132,6 @@ label  endingLoveYourself_choice01_StayHomeYes:
 
 label endingLoveYourself_choice01_Done:
     
-    hide bg_bass_house
 
     play sound "Endings/Love Yourself/epic-travel-on-celtic-roads-version-60s-10819 (1).mp3"
    
@@ -1134,12 +1140,12 @@ label endingLoveYourself_choice01_Done:
     "This choice led to a journey of multiple years, sealed inside a tiny box, but Bass persevered."
     
     play sound "Endings/Love Yourself/PORTAL (1).mp3"
-    show bg_portal
+    scene bg_portal
+    with fastDissolve
     
     "Upon arrival, Bass noticed a small detail."
     "Leiria wasn't real. All this time, it had been a wormhole! "
     
-    hide bg_portal
     
     charBass " Oooh, my head…Where…where am I?"
 
@@ -1150,7 +1156,8 @@ label endingLoveYourself_choice01_Done:
 
     "Bass was in fact, not dead, just a bit groggy from the journey."
     
-    show bg_mss
+    scene bg_mss
+    with fastDissolve
 
     "All along, Leiria had been a secret portal to Morocco."
     "He was now in a strange van, somewhere in this foreign country."
@@ -1164,13 +1171,12 @@ label endingLoveYourself_choice01_Done:
 
     charSeb "Ahhh!"
     
-    hide bg_mss
-    show bg_explosion
+    scene bg_explosion
     
     play sound "Shared Audio Themes and Leitmotifs/funny-eastern-short-music-vlog-background-hip-hop-beat-29-sec-148905 (1) (1).mp3"
 
-    hide bg_explosion
-    show bg_mss
+    scene bg_mss
+    
 
     charSeb "O.M.G. Did that thing just like, explode?"
     
@@ -1325,7 +1331,8 @@ label endingLoveYourself_choice02_Done:
 
 label endingRejected:
     $ endingId = "Rejected"
-    show bg_restaurant_outside
+    scene bg_restaurant_outside
+    with fastDissolve
 
     play sound "Endings/Rejected/the-wait-138639 (2).mp3"
 
@@ -1338,16 +1345,16 @@ label endingRejected:
 
     charBass "Don’t you dare use the ones that you have to pay for!"
     
-    hide bg_restaurant_outside
-    show bg_sweetdrop
+    scene bg_sweetdrop
+    with fastDissolve
     
     "Awaiting the return of his date, Bass had spent the last 5 hours behind the local Sweet Drop supermarket."
     "As the poor soulless employees left, they stared with pity into the eyes of someone who had even less soul. "
     "Heartbroken, Bass decided to become one with the Sweet Drop."
     play sound "Endings/Rejected/evil-mouth-ensemble-78778 (2).mp3"
     
-    hide bg_sweetdrop
-    show bg_sweetdrop_sacrifice
+    scene bg_sweetdrop_sacrifice
+    with fastDissolve
     
     
    
@@ -1360,9 +1367,11 @@ label endingRejected:
 
 
 label game_end_nice:
-    show bg_explosion_heart
+    scene bg_explosion_heart
+    with fastDissolve
+
     "What a masterful show of love!"
-    "Still. Maybe you'd like to try a different route? \n(THANKS FOR PLAYING!!!)"
+    "Still. Maybe you'd like to try a different route? \n(Ending: [endingId])\nTHANKS FOR PLAYING!!! <3 )"
 
     menu:
         "End Game":
