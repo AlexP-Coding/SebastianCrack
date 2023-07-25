@@ -1,4 +1,4 @@
-﻿# The script of the game goes in this file.
+# The script of the game goes in this file.
 
 ```
 To add:
@@ -19,6 +19,7 @@ transform middle:
 define fastDissolve = Dissolve(0.3)
 define slowDissolve = Dissolve(0.8)
 define slowishDissolve = Dissolve(0.5)
+define superslowdissolve = Dissolve(3.0)
 
 # CHARACTER COLORS
 define bgCharColorA = "#1d53a5"
@@ -72,6 +73,18 @@ define charMail = Character("Mailman", color=bgCharColorA)
 
 define currentGfriend = charGfPsycho
 
+
+screen viewport_screen():
+
+    viewport:
+        xalign 0.5 ysize 800
+
+        draggable True
+        mousewheel True
+        arrowkeys True
+
+        add "BACKGROUNDS AND CGS/SEBASTIAO.png"
+
 # SCRIPT 
 
 # The game starts here.
@@ -123,10 +136,13 @@ label fake_start:
     # These display lines of dialogue.
 
     ##### INTRO SEB #####
-    show sebastiao
+    show screen viewport_screen
+    hide sebastian
     "A long time ago, far far deep into the lands of Morocco a portuguese king was acting like a teenage brat."
     
     "This king was 24 years old."
+
+    #show sebastian
 
     play sound "Shared Audio Themes and Leitmotifs/funny-eastern-short-music-vlog-background-hip-hop-beat-29-sec-148905 (1) (1).mp3"
 
@@ -171,8 +187,10 @@ label fake_start:
     play sound "Intro/Intro Pt2 Bass/harp-glissando-with-chimes-sound-effect-128349.mp3"
     "{cps=2}Until…{/cps}"
 
+    hide screen viewport_screen with superslowdissolve
+    #hide sebastian
+    hide sebastian
 
-    hide sebastiao
     show cg_wishywash
 
 
@@ -918,6 +936,8 @@ label dateObnoxious_choice02_Trip:
     "They get kicked out instantly."
 
     play sound "Intro/Intro Pt2 Bass/wrong buzzer 6268.mp3"
+
+    jump dateObnoxious_choice02_Done
 
 label dateObnoxious_choice02_Manager:
 
